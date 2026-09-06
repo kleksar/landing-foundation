@@ -1,0 +1,810 @@
+$ bun run check && bun run typecheck && bun run test:unit && bun run test:repo && bun run build && bun run test:contracts && bun run test:e2e:built
+$ biome check --reporter=concise .
+Checked 39 files in 15ms. No fixes applied.
+$ react-router typegen && tsc -p tsconfig.json
+$ vitest run --config vitest.config.ts
+
+ RUN  v4.1.11 /workspace/scratch/77210dfccb4d
+
+
+ Test Files  5 passed (5)
+      Tests  34 passed (34)
+   Start at  23:32:07
+   Duration  227ms (transform 161ms, setup 0ms, import 256ms, tests 29ms, environment 0ms)
+
+$ vitest run --config vitest.repo.config.ts
+
+ RUN  v4.1.11 /workspace/scratch/77210dfccb4d
+
+
+ Test Files  4 passed (4)
+      Tests  10 passed (10)
+   Start at  23:32:08
+   Duration  483ms (transform 121ms, setup 0ms, import 441ms, tests 18ms, environment 0ms)
+
+$ react-router build
+Using Vite Environment API
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 85 modules transformed.
+rendering chunks...
+computing gzip size...
+build/client/robots.txt                            0.06 kB │ gzip:  0.08 kB
+build/client/sitemap.xml                           0.15 kB │ gzip:  0.14 kB
+build/client/.vite/manifest.json                   1.55 kB │ gzip:  0.42 kB
+build/client/assets/root-BJjnIp69.css              6.88 kB │ gzip:  2.47 kB
+build/client/assets/home-Bh3aYLpq.js               1.85 kB │ gzip:  0.83 kB
+build/client/assets/site.config-Od4zza8U.js        1.95 kB │ gzip:  0.93 kB
+build/client/assets/root-CX-Ou8KU.js              11.27 kB │ gzip:  4.46 kB
+build/client/assets/errorBoundaries-C8kmSvMZ.js   33.31 kB │ gzip: 11.66 kB
+build/client/assets/jsx-runtime-BSIt80zW.js       85.23 kB │ gzip: 28.34 kB
+build/client/assets/entry.client-C1m3x04Y.js     185.85 kB │ gzip: 58.60 kB
+
+✓ built in 411ms
+vite v8.2.2 building ssr environment for production...
+transforming...
+✓ 11 modules transformed.
+rendering chunks...
+
+✓ 1 asset cleaned from React Router server build.
+build/server/assets/server-build-BJjnIp69.css
+
+computing gzip size...
+build/server/robots.txt                         0.06 kB │ gzip: 0.08 kB
+build/server/sitemap.xml                        0.15 kB │ gzip: 0.14 kB
+build/server/.vite/manifest.json                0.22 kB │ gzip: 0.15 kB
+build/server/assets/server-build-BJjnIp69.css   6.88 kB │ gzip: 2.47 kB
+build/server/index.js                          12.51 kB │ gzip: 4.07 kB
+
+✓ built in 163ms
+Prerender (html): / -> build/client/index.html
+Prerender (html): SPA Fallback -> build/client/__spa-fallback.html
+$ vitest run --config vitest.contract.config.ts
+
+ RUN  v4.1.11 /workspace/scratch/77210dfccb4d
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  23:32:10
+   Duration  188ms (transform 39ms, setup 0ms, import 52ms, tests 16ms, environment 0ms)
+
+$ playwright test --project=chromium
+[WebServer] $ bun tooling/static-preview/server.ts build/client
+
+Running 8 tests using 4 workers
+
+(node:359) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:358) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:357) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript (2ms)
+  ✘  1 [chromium] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px (2ms)
+  ✘  3 [chromium] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks (2ms)
+  ✘  4 [chromium] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus (2ms)
+(node:440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:454) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:441) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  7 [chromium] › tests/e2e/smoke.spec.ts:39:1 › unknown routes return a real 404 (43ms)
+  ✘  6 [chromium] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target (2ms)
+  ✘  5 [chromium] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px (1ms)
+  ✘  8 [chromium] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors (1ms)
+
+
+  1) [chromium] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks ──────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-7UqJZx --remote-debugging-pipe --no-startup-window
+    <launched> pid=422
+    [pid=422][err] [422:422:0906/233211.752546:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=422][err] [0906/233211.752795:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=422][err] [0906/233211.752880:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/422/task: No such file or directory (2)
+    [pid=422][err] Received signal 6
+    [pid=422][err] #0 0x55ea84b046f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+    [pid=422][err] #1 0x55ea8957c0e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+    [pid=422][err] #2 0x7fec61838330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+    [pid=422][err] #3 0x7fec6183827e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+    [pid=422][err] #4 0x7fec6181b8ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+    [pid=422][err] #5 0x55ea89573ea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+    [pid=422][err] #6 0x55ea89536e3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+    [pid=422][err] #7 0x55ea89536dce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+    [pid=422][err] #8 0x55ea847952a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+    [pid=422][err] #9 0x55ea81bb06a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+    [pid=422][err] #10 0x55ea89536fb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+    [pid=422][err] #11 0x55ea84111cd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+    [pid=422][err] #12 0x55ea837adec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+    [pid=422][err] #13 0x55ea8476e1c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+    [pid=422][err] #14 0x55ea8480ce23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+    [pid=422][err] #15 0x55ea8480cde4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+    [pid=422][err] #16 0x55ea8422678b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+    [pid=422][err] #17 0x55ea84225aa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+    [pid=422][err] #18 0x55ea84221ba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+    [pid=422][err] #19 0x55ea842211ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+    [pid=422][err] #20 0x55ea842208a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+    [pid=422][err] #21 0x7fec6181d1ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+    [pid=422][err] #22 0x7fec6181d28b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+    [pid=422][err] #23 0x55ea84d01fba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+    [pid=422][err]   r8: 000011300006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+    [pid=422][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00001130000dc3c0
+    [pid=422][err]   di: 00000000000001a6  si: 00000000000001a6  bp: 00007ffd7001d5e0  bx: 00000000000001a6
+    [pid=422][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fec61891b2c  sp: 00007ffd7001d5a0
+    [pid=422][err]   ip: 00007fec61891b2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+    [pid=422][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+    [pid=422][err] [end of stack trace]
+    Call log:
+      - <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-7UqJZx --remote-debugging-pipe --no-startup-window
+      - <launched> pid=422
+      - [pid=422][err] [422:422:0906/233211.752546:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=422][err] [0906/233211.752795:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=422][err] [0906/233211.752880:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/422/task: No such file or directory (2)
+      - [pid=422][err] Received signal 6
+      - [pid=422][err] #0 0x55ea84b046f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+      - [pid=422][err] #1 0x55ea8957c0e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+      - [pid=422][err] #2 0x7fec61838330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+      - [pid=422][err] #3 0x7fec6183827e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+      - [pid=422][err] #4 0x7fec6181b8ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+      - [pid=422][err] #5 0x55ea89573ea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+      - [pid=422][err] #6 0x55ea89536e3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+      - [pid=422][err] #7 0x55ea89536dce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+      - [pid=422][err] #8 0x55ea847952a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+      - [pid=422][err] #9 0x55ea81bb06a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+      - [pid=422][err] #10 0x55ea89536fb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+      - [pid=422][err] #11 0x55ea84111cd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+      - [pid=422][err] #12 0x55ea837adec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+      - [pid=422][err] #13 0x55ea8476e1c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+      - [pid=422][err] #14 0x55ea8480ce23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+      - [pid=422][err] #15 0x55ea8480cde4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+      - [pid=422][err] #16 0x55ea8422678b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+      - [pid=422][err] #17 0x55ea84225aa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+      - [pid=422][err] #18 0x55ea84221ba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+      - [pid=422][err] #19 0x55ea842211ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+      - [pid=422][err] #20 0x55ea842208a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+      - [pid=422][err] #21 0x7fec6181d1ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+      - [pid=422][err] #22 0x7fec6181d28b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+      - [pid=422][err] #23 0x55ea84d01fba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+      - [pid=422][err]   r8: 000011300006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+      - [pid=422][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00001130000dc3c0
+      - [pid=422][err]   di: 00000000000001a6  si: 00000000000001a6  bp: 00007ffd7001d5e0  bx: 00000000000001a6
+      - [pid=422][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fec61891b2c  sp: 00007ffd7001d5a0
+      - [pid=422][err]   ip: 00007fec61891b2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+      - [pid=422][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+      - [pid=422][err] [end of stack trace]
+      - [pid=422] <gracefully close start>
+      - [pid=422] <kill>
+      - [pid=422] <will force kill>
+      - [pid=422] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=422] starting temporary directories cleanup
+      - [pid=422] finished temporary directories cleanup
+      - [pid=422] <gracefully close end>
+
+
+    Error Context: test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-NXtISI --remote-debugging-pipe --no-startup-window
+    <launched> pid=423
+    [pid=423][err] [423:423:0906/233211.754578:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=423][err] [0906/233211.754848:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=423][err] [0906/233211.754928:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/423/task: No such file or directory (2)
+    [pid=423][err] Received signal 6
+    [pid=423][err] #0 0x5568d5bba6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+    [pid=423][err] #1 0x5568da6320e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+    [pid=423][err] #2 0x7f9904501330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+    [pid=423][err] #3 0x7f990450127e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+    [pid=423][err] #4 0x7f99044e48ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+    [pid=423][err] #5 0x5568da629ea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+    [pid=423][err] #6 0x5568da5ece3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+    [pid=423][err] #7 0x5568da5ecdce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+    [pid=423][err] #8 0x5568d584b2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+    [pid=423][err] #9 0x5568d2c666a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+    [pid=423][err] #10 0x5568da5ecfb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+    [pid=423][err] #11 0x5568d51c7cd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+    [pid=423][err] #12 0x5568d4863ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+    [pid=423][err] #13 0x5568d58241c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+    [pid=423][err] #14 0x5568d58c2e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+    [pid=423][err] #15 0x5568d58c2de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+    [pid=423][err] #16 0x5568d52dc78b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+    [pid=423][err] #17 0x5568d52dbaa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+    [pid=423][err] #18 0x5568d52d7ba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+    [pid=423][err] #19 0x5568d52d71ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+    [pid=423][err] #20 0x5568d52d68a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+    [pid=423][err] #21 0x7f99044e61ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+    [pid=423][err] #22 0x7f99044e628b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+    [pid=423][err] #23 0x5568d5db7fba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+    [pid=423][err]   r8: 000034280006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+    [pid=423][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00003428000dc3c0
+    [pid=423][err]   di: 00000000000001a7  si: 00000000000001a7  bp: 00007fffc1ec3500  bx: 00000000000001a7
+    [pid=423][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007f990455ab2c  sp: 00007fffc1ec34c0
+    [pid=423][err]   ip: 00007f990455ab2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+    [pid=423][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+    [pid=423][err] [end of stack trace]
+    Call log:
+      - <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-NXtISI --remote-debugging-pipe --no-startup-window
+      - <launched> pid=423
+      - [pid=423][err] [423:423:0906/233211.754578:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=423][err] [0906/233211.754848:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=423][err] [0906/233211.754928:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/423/task: No such file or directory (2)
+      - [pid=423][err] Received signal 6
+      - [pid=423][err] #0 0x5568d5bba6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+      - [pid=423][err] #1 0x5568da6320e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+      - [pid=423][err] #2 0x7f9904501330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+      - [pid=423][err] #3 0x7f990450127e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+      - [pid=423][err] #4 0x7f99044e48ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+      - [pid=423][err] #5 0x5568da629ea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+      - [pid=423][err] #6 0x5568da5ece3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+      - [pid=423][err] #7 0x5568da5ecdce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+      - [pid=423][err] #8 0x5568d584b2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+      - [pid=423][err] #9 0x5568d2c666a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+      - [pid=423][err] #10 0x5568da5ecfb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+      - [pid=423][err] #11 0x5568d51c7cd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+      - [pid=423][err] #12 0x5568d4863ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+      - [pid=423][err] #13 0x5568d58241c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+      - [pid=423][err] #14 0x5568d58c2e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+      - [pid=423][err] #15 0x5568d58c2de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+      - [pid=423][err] #16 0x5568d52dc78b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+      - [pid=423][err] #17 0x5568d52dbaa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+      - [pid=423][err] #18 0x5568d52d7ba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+      - [pid=423][err] #19 0x5568d52d71ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+      - [pid=423][err] #20 0x5568d52d68a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+      - [pid=423][err] #21 0x7f99044e61ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+      - [pid=423][err] #22 0x7f99044e628b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+      - [pid=423][err] #23 0x5568d5db7fba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+      - [pid=423][err]   r8: 000034280006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+      - [pid=423][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00003428000dc3c0
+      - [pid=423][err]   di: 00000000000001a7  si: 00000000000001a7  bp: 00007fffc1ec3500  bx: 00000000000001a7
+      - [pid=423][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007f990455ab2c  sp: 00007fffc1ec34c0
+      - [pid=423][err]   ip: 00007f990455ab2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+      - [pid=423][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+      - [pid=423][err] [end of stack trace]
+      - [pid=423] <gracefully close start>
+      - [pid=423] <kill>
+      - [pid=423] <will force kill>
+      - [pid=423] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=423] starting temporary directories cleanup
+      - [pid=423] finished temporary directories cleanup
+      - [pid=423] <gracefully close end>
+
+
+    Error Context: test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-u0r5uE --remote-debugging-pipe --no-startup-window
+    <launched> pid=397
+    [pid=397][err] [397:397:0906/233211.694967:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=397][err] [0906/233211.695142:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=397][err] [0906/233211.695225:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/397/task: No such file or directory (2)
+    [pid=397][err] Received signal 6
+    [pid=397][err] #0 0x5555c661a6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+    [pid=397][err] #1 0x5555cb0920e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+    [pid=397][err] #2 0x7fcf26533330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+    [pid=397][err] #3 0x7fcf2653327e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+    [pid=397][err] #4 0x7fcf265168ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+    [pid=397][err] #5 0x5555cb089ea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+    [pid=397][err] #6 0x5555cb04ce3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+    [pid=397][err] #7 0x5555cb04cdce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+    [pid=397][err] #8 0x5555c62ab2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+    [pid=397][err] #9 0x5555c36c66a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+    [pid=397][err] #10 0x5555cb04cfb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+    [pid=397][err] #11 0x5555c5c27cd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+    [pid=397][err] #12 0x5555c52c3ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+    [pid=397][err] #13 0x5555c62841c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+    [pid=397][err] #14 0x5555c6322e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+    [pid=397][err] #15 0x5555c6322de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+    [pid=397][err] #16 0x5555c5d3c78b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+    [pid=397][err] #17 0x5555c5d3baa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+    [pid=397][err] #18 0x5555c5d37ba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+    [pid=397][err] #19 0x5555c5d371ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+    [pid=397][err] #20 0x5555c5d368a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+    [pid=397][err] #21 0x7fcf265181ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+    [pid=397][err] #22 0x7fcf2651828b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+    [pid=397][err] #23 0x5555c6817fba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+    [pid=397][err]   r8: 000039300006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+    [pid=397][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00003930000dc3c0
+    [pid=397][err]   di: 000000000000018d  si: 000000000000018d  bp: 00007fffe8802d50  bx: 000000000000018d
+    [pid=397][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fcf2658cb2c  sp: 00007fffe8802d10
+    [pid=397][err]   ip: 00007fcf2658cb2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+    [pid=397][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+    [pid=397][err] [end of stack trace]
+    Call log:
+      - <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-u0r5uE --remote-debugging-pipe --no-startup-window
+      - <launched> pid=397
+      - [pid=397][err] [397:397:0906/233211.694967:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=397][err] [0906/233211.695142:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=397][err] [0906/233211.695225:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/397/task: No such file or directory (2)
+      - [pid=397][err] Received signal 6
+      - [pid=397][err] #0 0x5555c661a6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+      - [pid=397][err] #1 0x5555cb0920e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+      - [pid=397][err] #2 0x7fcf26533330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+      - [pid=397][err] #3 0x7fcf2653327e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+      - [pid=397][err] #4 0x7fcf265168ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+      - [pid=397][err] #5 0x5555cb089ea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+      - [pid=397][err] #6 0x5555cb04ce3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+      - [pid=397][err] #7 0x5555cb04cdce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+      - [pid=397][err] #8 0x5555c62ab2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+      - [pid=397][err] #9 0x5555c36c66a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+      - [pid=397][err] #10 0x5555cb04cfb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+      - [pid=397][err] #11 0x5555c5c27cd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+      - [pid=397][err] #12 0x5555c52c3ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+      - [pid=397][err] #13 0x5555c62841c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+      - [pid=397][err] #14 0x5555c6322e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+      - [pid=397][err] #15 0x5555c6322de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+      - [pid=397][err] #16 0x5555c5d3c78b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+      - [pid=397][err] #17 0x5555c5d3baa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+      - [pid=397][err] #18 0x5555c5d37ba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+      - [pid=397][err] #19 0x5555c5d371ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+      - [pid=397][err] #20 0x5555c5d368a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+      - [pid=397][err] #21 0x7fcf265181ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+      - [pid=397][err] #22 0x7fcf2651828b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+      - [pid=397][err] #23 0x5555c6817fba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+      - [pid=397][err]   r8: 000039300006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+      - [pid=397][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00003930000dc3c0
+      - [pid=397][err]   di: 000000000000018d  si: 000000000000018d  bp: 00007fffe8802d50  bx: 000000000000018d
+      - [pid=397][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fcf2658cb2c  sp: 00007fffe8802d10
+      - [pid=397][err]   ip: 00007fcf2658cb2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+      - [pid=397][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+      - [pid=397][err] [end of stack trace]
+      - [pid=397] <gracefully close start>
+      - [pid=397] <kill>
+      - [pid=397] <will force kill>
+      - [pid=397] exception while trying to kill process: Error: kill ESRCH
+      - [pid=397] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=397] starting temporary directories cleanup
+      - [pid=397] finished temporary directories cleanup
+      - [pid=397] <gracefully close end>
+
+
+    Error Context: test-results/no-js-essential-content-remains-available-without-JavaScript-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/no-js-essential-content-remains-available-without-JavaScript-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/no-js-essential-content-remains-available-without-JavaScript-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px ───────────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-z3aL13 --remote-debugging-pipe --no-startup-window
+    <launched> pid=396
+    [pid=396][err] [396:396:0906/233211.693328:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=396][err] [0906/233211.693758:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=396][err] [0906/233211.693838:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/396/task: No such file or directory (2)
+    [pid=396][err] Received signal 6
+    [pid=396][err] #0 0x564ca071a6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+    [pid=396][err] #1 0x564ca51920e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+    [pid=396][err] #2 0x7fa4c376e330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+    [pid=396][err] #3 0x7fa4c376e27e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+    [pid=396][err] #4 0x7fa4c37518ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+    [pid=396][err] #5 0x564ca5189ea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+    [pid=396][err] #6 0x564ca514ce3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+    [pid=396][err] #7 0x564ca514cdce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+    [pid=396][err] #8 0x564ca03ab2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+    [pid=396][err] #9 0x564c9d7c66a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+    [pid=396][err] #10 0x564ca514cfb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+    [pid=396][err] #11 0x564c9fd27cd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+    [pid=396][err] #12 0x564c9f3c3ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+    [pid=396][err] #13 0x564ca03841c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+    [pid=396][err] #14 0x564ca0422e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+    [pid=396][err] #15 0x564ca0422de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+    [pid=396][err] #16 0x564c9fe3c78b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+    [pid=396][err] #17 0x564c9fe3baa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+    [pid=396][err] #18 0x564c9fe37ba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+    [pid=396][err] #19 0x564c9fe371ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+    [pid=396][err] #20 0x564c9fe368a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+    [pid=396][err] #21 0x7fa4c37531ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+    [pid=396][err] #22 0x7fa4c375328b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+    [pid=396][err] #23 0x564ca0917fba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+    [pid=396][err]   r8: 000005d80006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+    [pid=396][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 000005d8000dc3c0
+    [pid=396][err]   di: 000000000000018c  si: 000000000000018c  bp: 00007fff4f1921a0  bx: 000000000000018c
+    [pid=396][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fa4c37c7b2c  sp: 00007fff4f192160
+    [pid=396][err]   ip: 00007fa4c37c7b2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+    [pid=396][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+    [pid=396][err] [end of stack trace]
+    Call log:
+      - <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-z3aL13 --remote-debugging-pipe --no-startup-window
+      - <launched> pid=396
+      - [pid=396][err] [396:396:0906/233211.693328:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=396][err] [0906/233211.693758:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=396][err] [0906/233211.693838:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/396/task: No such file or directory (2)
+      - [pid=396][err] Received signal 6
+      - [pid=396][err] #0 0x564ca071a6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+      - [pid=396][err] #1 0x564ca51920e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+      - [pid=396][err] #2 0x7fa4c376e330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+      - [pid=396][err] #3 0x7fa4c376e27e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+      - [pid=396][err] #4 0x7fa4c37518ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+      - [pid=396][err] #5 0x564ca5189ea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+      - [pid=396][err] #6 0x564ca514ce3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+      - [pid=396][err] #7 0x564ca514cdce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+      - [pid=396][err] #8 0x564ca03ab2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+      - [pid=396][err] #9 0x564c9d7c66a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+      - [pid=396][err] #10 0x564ca514cfb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+      - [pid=396][err] #11 0x564c9fd27cd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+      - [pid=396][err] #12 0x564c9f3c3ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+      - [pid=396][err] #13 0x564ca03841c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+      - [pid=396][err] #14 0x564ca0422e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+      - [pid=396][err] #15 0x564ca0422de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+      - [pid=396][err] #16 0x564c9fe3c78b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+      - [pid=396][err] #17 0x564c9fe3baa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+      - [pid=396][err] #18 0x564c9fe37ba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+      - [pid=396][err] #19 0x564c9fe371ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+      - [pid=396][err] #20 0x564c9fe368a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+      - [pid=396][err] #21 0x7fa4c37531ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+      - [pid=396][err] #22 0x7fa4c375328b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+      - [pid=396][err] #23 0x564ca0917fba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+      - [pid=396][err]   r8: 000005d80006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+      - [pid=396][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 000005d8000dc3c0
+      - [pid=396][err]   di: 000000000000018c  si: 000000000000018c  bp: 00007fff4f1921a0  bx: 000000000000018c
+      - [pid=396][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fa4c37c7b2c  sp: 00007fff4f192160
+      - [pid=396][err]   ip: 00007fa4c37c7b2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+      - [pid=396][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+      - [pid=396][err] [end of stack trace]
+      - [pid=396] <gracefully close start>
+      - [pid=396] <kill>
+      - [pid=396] <will force kill>
+      - [pid=396] exception while trying to kill process: Error: kill ESRCH
+      - [pid=396] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=396] starting temporary directories cleanup
+      - [pid=396] finished temporary directories cleanup
+      - [pid=396] <gracefully close end>
+
+
+    Error Context: test-results/responsive-has-no-horizontal-overflow-at-390px-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/responsive-has-no-horizontal-overflow-at-390px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/responsive-has-no-horizontal-overflow-at-390px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px ──────────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-bGknFw --remote-debugging-pipe --no-startup-window
+    <launched> pid=484
+    [pid=484][err] [484:484:0906/233217.299822:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=484][err] [0906/233217.304356:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=484][err] [0906/233217.304451:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/484/task: No such file or directory (2)
+    [pid=484][err] Received signal 6
+    [pid=484][err] #0 0x55dceed1e6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+    [pid=484][err] #1 0x55dcf37960e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+    [pid=484][err] #2 0x7fde5196d330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+    [pid=484][err] #3 0x7fde5196d27e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+    [pid=484][err] #4 0x7fde519508ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+    [pid=484][err] #5 0x55dcf378dea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+    [pid=484][err] #6 0x55dcf3750e3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+    [pid=484][err] #7 0x55dcf3750dce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+    [pid=484][err] #8 0x55dcee9af2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+    [pid=484][err] #9 0x55dcebdca6a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+    [pid=484][err] #10 0x55dcf3750fb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+    [pid=484][err] #11 0x55dcee32bcd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+    [pid=484][err] #12 0x55dced9c7ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+    [pid=484][err] #13 0x55dcee9881c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+    [pid=484][err] #14 0x55dceea26e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+    [pid=484][err] #15 0x55dceea26de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+    [pid=484][err] #16 0x55dcee44078b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+    [pid=484][err] #17 0x55dcee43faa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+    [pid=484][err] #18 0x55dcee43bba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+    [pid=484][err] #19 0x55dcee43b1ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+    [pid=484][err] #20 0x55dcee43a8a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+    [pid=484][err] #21 0x7fde519521ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+    [pid=484][err] #22 0x7fde5195228b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+    [pid=484][err] #23 0x55dceef1bfba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+    [pid=484][err]   r8: 00002e780006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+    [pid=484][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00002e78000dc3c0
+    [pid=484][err]   di: 00000000000001e4  si: 00000000000001e4  bp: 00007ffe8685efb0  bx: 00000000000001e4
+    [pid=484][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fde519c6b2c  sp: 00007ffe8685ef70
+    [pid=484][err]   ip: 00007fde519c6b2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+    [pid=484][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+    [pid=484][err] [end of stack trace]
+    Call log:
+      - <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-bGknFw --remote-debugging-pipe --no-startup-window
+      - <launched> pid=484
+      - [pid=484][err] [484:484:0906/233217.299822:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=484][err] [0906/233217.304356:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=484][err] [0906/233217.304451:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/484/task: No such file or directory (2)
+      - [pid=484][err] Received signal 6
+      - [pid=484][err] #0 0x55dceed1e6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+      - [pid=484][err] #1 0x55dcf37960e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+      - [pid=484][err] #2 0x7fde5196d330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+      - [pid=484][err] #3 0x7fde5196d27e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+      - [pid=484][err] #4 0x7fde519508ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+      - [pid=484][err] #5 0x55dcf378dea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+      - [pid=484][err] #6 0x55dcf3750e3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+      - [pid=484][err] #7 0x55dcf3750dce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+      - [pid=484][err] #8 0x55dcee9af2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+      - [pid=484][err] #9 0x55dcebdca6a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+      - [pid=484][err] #10 0x55dcf3750fb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+      - [pid=484][err] #11 0x55dcee32bcd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+      - [pid=484][err] #12 0x55dced9c7ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+      - [pid=484][err] #13 0x55dcee9881c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+      - [pid=484][err] #14 0x55dceea26e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+      - [pid=484][err] #15 0x55dceea26de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+      - [pid=484][err] #16 0x55dcee44078b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+      - [pid=484][err] #17 0x55dcee43faa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+      - [pid=484][err] #18 0x55dcee43bba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+      - [pid=484][err] #19 0x55dcee43b1ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+      - [pid=484][err] #20 0x55dcee43a8a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+      - [pid=484][err] #21 0x7fde519521ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+      - [pid=484][err] #22 0x7fde5195228b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+      - [pid=484][err] #23 0x55dceef1bfba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+      - [pid=484][err]   r8: 00002e780006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+      - [pid=484][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00002e78000dc3c0
+      - [pid=484][err]   di: 00000000000001e4  si: 00000000000001e4  bp: 00007ffe8685efb0  bx: 00000000000001e4
+      - [pid=484][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fde519c6b2c  sp: 00007ffe8685ef70
+      - [pid=484][err]   ip: 00007fde519c6b2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+      - [pid=484][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+      - [pid=484][err] [end of stack trace]
+      - [pid=484] <gracefully close start>
+      - [pid=484] <kill>
+      - [pid=484] <will force kill>
+      - [pid=484] exception while trying to kill process: Error: kill ESRCH
+      - [pid=484] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=484] starting temporary directories cleanup
+      - [pid=484] finished temporary directories cleanup
+      - [pid=484] <gracefully close end>
+
+
+    Error Context: test-results/responsive-has-no-horizontal-overflow-at-1440px-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/responsive-has-no-horizontal-overflow-at-1440px-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/responsive-has-no-horizontal-overflow-at-1440px-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-Qcxe9p --remote-debugging-pipe --no-startup-window
+    <launched> pid=495
+    [pid=495][err] [495:495:0906/233217.321797:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=495][err] [0906/233217.322006:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=495][err] [0906/233217.322092:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/495/task: No such file or directory (2)
+    [pid=495][err] Received signal 6
+    [pid=495][err] #0 0x55ee71eaf6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+    [pid=495][err] #1 0x55ee769270e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+    [pid=495][err] #2 0x7f1aef9ac330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+    [pid=495][err] #3 0x7f1aef9ac27e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+    [pid=495][err] #4 0x7f1aef98f8ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+    [pid=495][err] #5 0x55ee7691eea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+    [pid=495][err] #6 0x55ee768e1e3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+    [pid=495][err] #7 0x55ee768e1dce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+    [pid=495][err] #8 0x55ee71b402a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+    [pid=495][err] #9 0x55ee6ef5b6a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+    [pid=495][err] #10 0x55ee768e1fb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+    [pid=495][err] #11 0x55ee714bccd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+    [pid=495][err] #12 0x55ee70b58ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+    [pid=495][err] #13 0x55ee71b191c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+    [pid=495][err] #14 0x55ee71bb7e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+    [pid=495][err] #15 0x55ee71bb7de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+    [pid=495][err] #16 0x55ee715d178b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+    [pid=495][err] #17 0x55ee715d0aa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+    [pid=495][err] #18 0x55ee715ccba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+    [pid=495][err] #19 0x55ee715cc1ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+    [pid=495][err] #20 0x55ee715cb8a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+    [pid=495][err] #21 0x7f1aef9911ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+    [pid=495][err] #22 0x7f1aef99128b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+    [pid=495][err] #23 0x55ee720acfba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+    [pid=495][err]   r8: 000023580006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+    [pid=495][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00002358000dc3c0
+    [pid=495][err]   di: 00000000000001ef  si: 00000000000001ef  bp: 00007fff669c2fb0  bx: 00000000000001ef
+    [pid=495][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007f1aefa05b2c  sp: 00007fff669c2f70
+    [pid=495][err]   ip: 00007f1aefa05b2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+    [pid=495][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+    [pid=495][err] [end of stack trace]
+    Call log:
+      - <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-Qcxe9p --remote-debugging-pipe --no-startup-window
+      - <launched> pid=495
+      - [pid=495][err] [495:495:0906/233217.321797:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=495][err] [0906/233217.322006:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=495][err] [0906/233217.322092:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/495/task: No such file or directory (2)
+      - [pid=495][err] Received signal 6
+      - [pid=495][err] #0 0x55ee71eaf6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+      - [pid=495][err] #1 0x55ee769270e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+      - [pid=495][err] #2 0x7f1aef9ac330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+      - [pid=495][err] #3 0x7f1aef9ac27e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+      - [pid=495][err] #4 0x7f1aef98f8ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+      - [pid=495][err] #5 0x55ee7691eea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+      - [pid=495][err] #6 0x55ee768e1e3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+      - [pid=495][err] #7 0x55ee768e1dce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+      - [pid=495][err] #8 0x55ee71b402a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+      - [pid=495][err] #9 0x55ee6ef5b6a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+      - [pid=495][err] #10 0x55ee768e1fb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+      - [pid=495][err] #11 0x55ee714bccd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+      - [pid=495][err] #12 0x55ee70b58ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+      - [pid=495][err] #13 0x55ee71b191c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+      - [pid=495][err] #14 0x55ee71bb7e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+      - [pid=495][err] #15 0x55ee71bb7de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+      - [pid=495][err] #16 0x55ee715d178b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+      - [pid=495][err] #17 0x55ee715d0aa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+      - [pid=495][err] #18 0x55ee715ccba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+      - [pid=495][err] #19 0x55ee715cc1ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+      - [pid=495][err] #20 0x55ee715cb8a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+      - [pid=495][err] #21 0x7f1aef9911ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+      - [pid=495][err] #22 0x7f1aef99128b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+      - [pid=495][err] #23 0x55ee720acfba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+      - [pid=495][err]   r8: 000023580006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+      - [pid=495][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00002358000dc3c0
+      - [pid=495][err]   di: 00000000000001ef  si: 00000000000001ef  bp: 00007fff669c2fb0  bx: 00000000000001ef
+      - [pid=495][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007f1aefa05b2c  sp: 00007fff669c2f70
+      - [pid=495][err]   ip: 00007f1aefa05b2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+      - [pid=495][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+      - [pid=495][err] [end of stack trace]
+      - [pid=495] <gracefully close start>
+      - [pid=495] <kill>
+      - [pid=495] <will force kill>
+      - [pid=495] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=495] starting temporary directories cleanup
+      - [pid=495] finished temporary directories cleanup
+      - [pid=495] <gracefully close end>
+
+
+    Error Context: test-results/smoke-loads-the-prerendered-landing-without-browser-errors-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-loads-the-prerendered-landing-without-browser-errors-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-loads-the-prerendered-landing-without-browser-errors-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target ────────────────────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-lHHxKc --remote-debugging-pipe --no-startup-window
+    <launched> pid=489
+    [pid=489][err] [489:489:0906/233217.305726:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=489][err] [0906/233217.305900:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=489][err] [0906/233217.305977:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/489/task: No such file or directory (2)
+    [pid=489][err] Received signal 6
+    [pid=489][err] #0 0x557645f7e6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+    [pid=489][err] #1 0x55764a9f60e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+    [pid=489][err] #2 0x7fd40df92330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+    [pid=489][err] #3 0x7fd40df9227e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+    [pid=489][err] #4 0x7fd40df758ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+    [pid=489][err] #5 0x55764a9edea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+    [pid=489][err] #6 0x55764a9b0e3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+    [pid=489][err] #7 0x55764a9b0dce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+    [pid=489][err] #8 0x557645c0f2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+    [pid=489][err] #9 0x55764302a6a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+    [pid=489][err] #10 0x55764a9b0fb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+    [pid=489][err] #11 0x55764558bcd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+    [pid=489][err] #12 0x557644c27ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+    [pid=489][err] #13 0x557645be81c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+    [pid=489][err] #14 0x557645c86e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+    [pid=489][err] #15 0x557645c86de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+    [pid=489][err] #16 0x5576456a078b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+    [pid=489][err] #17 0x55764569faa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+    [pid=489][err] #18 0x55764569bba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+    [pid=489][err] #19 0x55764569b1ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+    [pid=489][err] #20 0x55764569a8a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+    [pid=489][err] #21 0x7fd40df771ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+    [pid=489][err] #22 0x7fd40df7728b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+    [pid=489][err] #23 0x55764617bfba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+    [pid=489][err]   r8: 000026880006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+    [pid=489][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00002688000dc3c0
+    [pid=489][err]   di: 00000000000001e9  si: 00000000000001e9  bp: 00007ffc0deb2190  bx: 00000000000001e9
+    [pid=489][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fd40dfebb2c  sp: 00007ffc0deb2150
+    [pid=489][err]   ip: 00007fd40dfebb2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+    [pid=489][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+    [pid=489][err] [end of stack trace]
+    Call log:
+      - <launching> /tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-lHHxKc --remote-debugging-pipe --no-startup-window
+      - <launched> pid=489
+      - [pid=489][err] [489:489:0906/233217.305726:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=489][err] [0906/233217.305900:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=489][err] [0906/233217.305977:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/489/task: No such file or directory (2)
+      - [pid=489][err] Received signal 6
+      - [pid=489][err] #0 0x557645f7e6f3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x69f56f2)
+      - [pid=489][err] #1 0x55764a9f60e4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb46d0e3)
+      - [pid=489][err] #2 0x7fd40df92330 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4532f)
+      - [pid=489][err] #3 0x7fd40df9227e (/usr/lib/x86_64-linux-gnu/libc.so.6+0x4527d)
+      - [pid=489][err] #4 0x7fd40df758ff (/usr/lib/x86_64-linux-gnu/libc.so.6+0x288fe)
+      - [pid=489][err] #5 0x55764a9edea5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb464ea4)
+      - [pid=489][err] #6 0x55764a9b0e3d (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427e3c)
+      - [pid=489][err] #7 0x55764a9b0dce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427dcd)
+      - [pid=489][err] #8 0x557645c0f2a8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66862a7)
+      - [pid=489][err] #9 0x55764302a6a9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x3aa16a8)
+      - [pid=489][err] #10 0x55764a9b0fb0 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0xb427faf)
+      - [pid=489][err] #11 0x55764558bcd9 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6002cd8)
+      - [pid=489][err] #12 0x557644c27ec8 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x569eec7)
+      - [pid=489][err] #13 0x557645be81c7 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x665f1c6)
+      - [pid=489][err] #14 0x557645c86e23 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fde22)
+      - [pid=489][err] #15 0x557645c86de4 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x66fdde3)
+      - [pid=489][err] #16 0x5576456a078b (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x611778a)
+      - [pid=489][err] #17 0x55764569faa3 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6116aa2)
+      - [pid=489][err] #18 0x55764569bba6 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6112ba5)
+      - [pid=489][err] #19 0x55764569b1ce (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61121cd)
+      - [pid=489][err] #20 0x55764569a8a5 (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x61118a4)
+      - [pid=489][err] #21 0x7fd40df771ca (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9)
+      - [pid=489][err] #22 0x7fd40df7728b (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a28a)
+      - [pid=489][err] #23 0x55764617bfba (/tmp/landing-toolchain-vryh8H/browsers/chromium-1234/chrome-linux64/chrome+0x6bf2fb9)
+      - [pid=489][err]   r8: 000026880006862d  r9: 0000000000000001 r10: 0000000000000008 r11: 0000000000000246
+      - [pid=489][err]  r12: 0000000000000006 r13: 000000000000008e r14: 0000000000000016 r15: 00002688000dc3c0
+      - [pid=489][err]   di: 00000000000001e9  si: 00000000000001e9  bp: 00007ffc0deb2190  bx: 00000000000001e9
+      - [pid=489][err]   dx: 0000000000000006  ax: 0000000000000000  cx: 00007fd40dfebb2c  sp: 00007ffc0deb2150
+      - [pid=489][err]   ip: 00007fd40dfebb2c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+      - [pid=489][err]  trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+      - [pid=489][err] [end of stack trace]
+      - [pid=489] <gracefully close start>
+      - [pid=489] <kill>
+      - [pid=489] <will force kill>
+      - [pid=489] exception while trying to kill process: Error: kill ESRCH
+      - [pid=489] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=489] starting temporary directories cleanup
+      - [pid=489] finished temporary directories cleanup
+      - [pid=489] <gracefully close end>
+
+
+    Error Context: test-results/smoke-primary-CTA-reaches-its-target-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-primary-CTA-reaches-its-target-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-primary-CTA-reaches-its-target-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7 failed
+    [chromium] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks ───────
+    [chromium] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus 
+    [chromium] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript 
+    [chromium] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px ────────────
+    [chromium] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px ───────────
+    [chromium] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors 
+    [chromium] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target ─────────────────────
+  1 passed (11.3s)
+error: script "test:e2e:built" exited with code 1
+error: script "verify" exited with code 1

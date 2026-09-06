@@ -1,0 +1,1131 @@
+$ bun run build && bun run test:compat:built --config "/tmp/landing-browser-stage42/playwright.compat.config.mts"
+$ react-router build
+Using Vite Environment API
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 85 modules transformed.
+rendering chunks...
+computing gzip size...
+build/client/robots.txt                            0.06 kB │ gzip:  0.08 kB
+build/client/sitemap.xml                           0.15 kB │ gzip:  0.14 kB
+build/client/.vite/manifest.json                   1.55 kB │ gzip:  0.42 kB
+build/client/assets/root-BJjnIp69.css              6.88 kB │ gzip:  2.47 kB
+build/client/assets/home-Bh3aYLpq.js               1.85 kB │ gzip:  0.83 kB
+build/client/assets/site.config-Od4zza8U.js        1.95 kB │ gzip:  0.93 kB
+build/client/assets/root-CX-Ou8KU.js              11.27 kB │ gzip:  4.46 kB
+build/client/assets/errorBoundaries-C8kmSvMZ.js   33.31 kB │ gzip: 11.66 kB
+build/client/assets/jsx-runtime-BSIt80zW.js       85.23 kB │ gzip: 28.34 kB
+build/client/assets/entry.client-C1m3x04Y.js     185.85 kB │ gzip: 58.60 kB
+
+✓ built in 474ms
+vite v8.2.2 building ssr environment for production...
+transforming...
+✓ 11 modules transformed.
+rendering chunks...
+
+✓ 1 asset cleaned from React Router server build.
+build/server/assets/server-build-BJjnIp69.css
+
+computing gzip size...
+build/server/robots.txt                         0.06 kB │ gzip: 0.08 kB
+build/server/sitemap.xml                        0.15 kB │ gzip: 0.14 kB
+build/server/.vite/manifest.json                0.22 kB │ gzip: 0.15 kB
+build/server/assets/server-build-BJjnIp69.css   6.88 kB │ gzip: 2.47 kB
+build/server/index.js                          12.51 kB │ gzip: 4.07 kB
+
+✓ built in 133ms
+Prerender (html): / -> build/client/index.html
+Prerender (html): SPA Fallback -> build/client/__spa-fallback.html
+$ playwright test --project=chrome --project=firefox --project=webkit --config "/tmp/landing-browser-stage42/playwright.compat.config.mts"
+[WebServer] $ bun tooling/static-preview/server.ts build/client
+
+Running 24 tests using 4 workers
+
+(node:92) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:89) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   2 [chrome] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px (2ms)
+  ✘   1 [chrome] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript (2ms)
+(node:181) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:182) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   3 [chrome] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus (2ms)
+  ✘   4 [chrome] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks (2ms)
+(node:227) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 [chrome] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px (2ms)
+  ✘   6 [chrome] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors (3ms)
+  ✓   7 [chrome] › tests/e2e/smoke.spec.ts:39:1 › unknown routes return a real 404 (46ms)
+(node:252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:258) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:277) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   8 [chrome] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target (2ms)
+(node:737) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 [firefox] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks (30.0s)
+  ✘  10 [firefox] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript (30.1s)
+(node:908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:921) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [firefox] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus (30.0s)
+(node:1008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  12 [firefox] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px (30.0s)
+(node:1366) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [firefox] › tests/e2e/smoke.spec.ts:39:1 › unknown routes return a real 404 (35ms)
+(node:1381) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  17 [webkit] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks (2ms)
+(node:1725) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  18 [webkit] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus (2ms)
+(node:2069) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  19 [webkit] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript (2ms)
+(node:2413) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  20 [webkit] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px (2ms)
+(node:2757) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  21 [webkit] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px (2ms)
+(node:3101) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  22 [webkit] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors (2ms)
+(node:3445) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  23 [webkit] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target (2ms)
+(node:3790) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  24 [webkit] › tests/e2e/smoke.spec.ts:39:1 › unknown routes return a real 404 (30ms)
+  ✘  13 [firefox] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px (30.0s)
+  ✘  14 [firefox] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors (30.0s)
+  ✘  15 [firefox] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target (30.0s)
+
+
+  1) [chrome] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks ────────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-DDvrJc --remote-debugging-pipe --no-startup-window
+    <launched> pid=160
+    [pid=160][err] [0906/233349.568930:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+    [pid=160][err] [160:160:0906/233349.590935:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=160][err] [0906/233349.591078:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=160][err] [0906/233349.591148:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/160/task: No such file or directory (2)
+    Call log:
+      - <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-DDvrJc --remote-debugging-pipe --no-startup-window
+      - <launched> pid=160
+      - [pid=160][err] [0906/233349.568930:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+      - [pid=160][err] [160:160:0906/233349.590935:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=160][err] [0906/233349.591078:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=160][err] [0906/233349.591148:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/160/task: No such file or directory (2)
+      - [pid=160] <gracefully close start>
+      - [pid=160] <kill>
+      - [pid=160] <will force kill>
+      - [pid=160] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=160] starting temporary directories cleanup
+      - [pid=160] finished temporary directories cleanup
+      - [pid=160] <gracefully close end>
+
+
+    Error Context: test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-chrome/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-chrome/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-chrome/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chrome] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-775N4E --remote-debugging-pipe --no-startup-window
+    <launched> pid=159
+    [pid=159][err] [0906/233349.562888:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+    [pid=159][err] [159:159:0906/233349.590572:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=159][err] [0906/233349.590778:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=159][err] [0906/233349.590853:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/159/task: No such file or directory (2)
+    Call log:
+      - <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-775N4E --remote-debugging-pipe --no-startup-window
+      - <launched> pid=159
+      - [pid=159][err] [0906/233349.562888:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+      - [pid=159][err] [159:159:0906/233349.590572:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=159][err] [0906/233349.590778:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=159][err] [0906/233349.590853:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/159/task: No such file or directory (2)
+      - [pid=159] <gracefully close start>
+      - [pid=159] <kill>
+      - [pid=159] <will force kill>
+      - [pid=159] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=159] starting temporary directories cleanup
+      - [pid=159] finished temporary directories cleanup
+      - [pid=159] <gracefully close end>
+
+
+    Error Context: test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-chrome/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-chrome/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-chrome/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chrome] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-irVIsc --remote-debugging-pipe --no-startup-window
+    <launched> pid=129
+    [pid=129][err] [0906/233349.496093:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+    [pid=129][err] [129:129:0906/233349.530492:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=129][err] [0906/233349.530666:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=129][err] [0906/233349.530905:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530924:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530928:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530931:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530944:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530947:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530949:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530952:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530955:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530958:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530960:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530963:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530965:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530968:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530970:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=129][err] [0906/233349.530973:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    Call log:
+      - <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-irVIsc --remote-debugging-pipe --no-startup-window
+      - <launched> pid=129
+      - [pid=129][err] [0906/233349.496093:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+      - [pid=129][err] [129:129:0906/233349.530492:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=129][err] [0906/233349.530666:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=129][err] [0906/233349.530905:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530924:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530928:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530931:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530944:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530947:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530949:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530952:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530955:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530958:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530960:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530963:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530965:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530968:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530970:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129][err] [0906/233349.530973:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=129] <gracefully close start>
+      - [pid=129] <kill>
+      - [pid=129] <will force kill>
+      - [pid=129][err] [149:149:0100/000000.539556:ERROR:content/zygote/zygote_linux.cc:662] write: Broken pipe (32)
+      - [pid=129] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=129] starting temporary directories cleanup
+      - [pid=129] finished temporary directories cleanup
+      - [pid=129] <gracefully close end>
+
+
+    Error Context: test-results/no-js-essential-content-remains-available-without-JavaScript-chrome/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/no-js-essential-content-remains-available-without-JavaScript-chrome/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/no-js-essential-content-remains-available-without-JavaScript-chrome/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chrome] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px ─────────────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-iWNyh1 --remote-debugging-pipe --no-startup-window
+    <launched> pid=130
+    [pid=130][err] [0906/233349.500058:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+    [pid=130][err] [130:130:0906/233349.528948:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=130][err] [0906/233349.530003:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=130][err] [0906/233349.530116:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530121:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530123:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530126:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530127:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530144:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530146:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530148:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530150:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530152:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530153:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530155:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530156:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530158:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530160:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    [pid=130][err] [0906/233349.530161:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+    Call log:
+      - <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-iWNyh1 --remote-debugging-pipe --no-startup-window
+      - <launched> pid=130
+      - [pid=130][err] [0906/233349.500058:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+      - [pid=130][err] [130:130:0906/233349.528948:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=130][err] [0906/233349.530003:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=130][err] [0906/233349.530116:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530121:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530123:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530126:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530127:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530144:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530146:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530148:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530150:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530152:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530153:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530155:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530156:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530158:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530160:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130][err] [0906/233349.530161:ERROR:third_party/crashpad/crashpad/handler/linux/exception_handler_server.cc:142] tgkill: No such process (3)
+      - [pid=130] <gracefully close start>
+      - [pid=130] <kill>
+      - [pid=130] <will force kill>
+      - [pid=130] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=130] starting temporary directories cleanup
+      - [pid=130] finished temporary directories cleanup
+      - [pid=130] <gracefully close end>
+
+
+    Error Context: test-results/responsive-has-no-horizontal-overflow-at-390px-chrome/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/responsive-has-no-horizontal-overflow-at-390px-chrome/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/responsive-has-no-horizontal-overflow-at-390px-chrome/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chrome] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px ────────────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-tauWX9 --remote-debugging-pipe --no-startup-window
+    <launched> pid=205
+    [pid=205][err] [0906/233350.021084:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+    [pid=205][err] [205:205:0906/233350.053987:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=205][err] [0906/233350.054337:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=205][err] [0906/233350.054410:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/205/task: No such file or directory (2)
+    Call log:
+      - <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-tauWX9 --remote-debugging-pipe --no-startup-window
+      - <launched> pid=205
+      - [pid=205][err] [0906/233350.021084:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+      - [pid=205][err] [205:205:0906/233350.053987:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=205][err] [0906/233350.054337:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=205][err] [0906/233350.054410:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/205/task: No such file or directory (2)
+      - [pid=205] <gracefully close start>
+      - [pid=205] <kill>
+      - [pid=205] <will force kill>
+      - [pid=205] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=205] starting temporary directories cleanup
+      - [pid=205] finished temporary directories cleanup
+      - [pid=205] <gracefully close end>
+
+
+    Error Context: test-results/responsive-has-no-horizontal-overflow-at-1440px-chrome/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/responsive-has-no-horizontal-overflow-at-1440px-chrome/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/responsive-has-no-horizontal-overflow-at-1440px-chrome/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chrome] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors ─
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-UV5jqn --remote-debugging-pipe --no-startup-window
+    <launched> pid=206
+    [pid=206][err] [0906/233350.020967:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+    [pid=206][err] [206:206:0906/233350.053945:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=206][err] [0906/233350.056346:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=206][err] [0906/233350.056422:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/206/task: No such file or directory (2)
+    Call log:
+      - <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-UV5jqn --remote-debugging-pipe --no-startup-window
+      - <launched> pid=206
+      - [pid=206][err] [0906/233350.020967:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+      - [pid=206][err] [206:206:0906/233350.053945:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=206][err] [0906/233350.056346:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=206][err] [0906/233350.056422:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/206/task: No such file or directory (2)
+      - [pid=206] <gracefully close start>
+      - [pid=206] <kill>
+      - [pid=206] <will force kill>
+      - [pid=206] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=206] starting temporary directories cleanup
+      - [pid=206] finished temporary directories cleanup
+      - [pid=206] <gracefully close end>
+
+
+    Error Context: test-results/smoke-loads-the-prerendered-landing-without-browser-errors-chrome/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-loads-the-prerendered-landing-without-browser-errors-chrome/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-loads-the-prerendered-landing-without-browser-errors-chrome/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chrome] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target ──────────────────────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-HIJZHC --remote-debugging-pipe --no-startup-window
+    <launched> pid=251
+    [pid=251][err] [0906/233355.126079:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+    [pid=251][err] [251:251:0906/233355.167227:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+    [pid=251][err] [0906/233355.167422:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+    [pid=251][err] [0906/233355.167497:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/251/task: No such file or directory (2)
+    Call log:
+      - <launching> /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-HIJZHC --remote-debugging-pipe --no-startup-window
+      - <launched> pid=251
+      - [pid=251][err] [0906/233355.126079:WARNING:chrome/app/chrome_main_linux.cc:84] Read channel stable from /tmp/landing-browser-stage42/chrome-stable/opt/google/chrome/CHROME_VERSION_EXTRA
+      - [pid=251][err] [251:251:0906/233355.167227:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+      - [pid=251][err] [0906/233355.167422:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+      - [pid=251][err] [0906/233355.167497:ERROR:third_party/crashpad/crashpad/util/file/directory_reader_posix.cc:43] opendir /proc/251/task: No such file or directory (2)
+      - [pid=251] <gracefully close start>
+      - [pid=251] <kill>
+      - [pid=251] <will force kill>
+      - [pid=251] <process did exit: exitCode=null, signal=SIGABRT>
+      - [pid=251] starting temporary directories cleanup
+      - [pid=251] finished temporary directories cleanup
+      - [pid=251] <gracefully close end>
+
+
+    Error Context: test-results/smoke-primary-CTA-reaches-its-target-chrome/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-primary-CTA-reaches-its-target-chrome/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-primary-CTA-reaches-its-target-chrome/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [firefox] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks ───────
+
+    Test timeout of 30000ms exceeded while setting up "page".
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/firefox-1538/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-F7oZCS -juggler-pipe -silent
+    <launched> pid=290
+    [pid=290][err] *** You are running in headless mode.
+    [pid=290][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 119: unreachable code after return statement
+    [pid=290][out] 
+    [pid=290][out] Juggler listening to the pipe
+    [pid=290][err] [399] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][err] [422] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][err] [428] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][err] [Parent 290, IPC I/O Parent] WARNING: process 422 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=290][err] [464] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][err] [Parent 290, IPC I/O Parent] WARNING: process 464 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=290][err] [490] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][err] [Parent 290, IPC I/O Parent] WARNING: process 490 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=290][err] [495] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][err] [529] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][out] 
+    [pid=290][out]         ERROR: ERROR: cannot find session with id "8eea5cba-30f3-4da9-96f7-be94e09cabf6" _dispatch@chrome://juggler/content/protocol/Dispatcher.js:54:15
+    [pid=290][out] receiveMessage@chrome://juggler/content/components/Juggler.js:121:20
+    [pid=290][out] 
+    [pid=290][err] [Parent 290, IPC I/O Parent] WARNING: process 495 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=290][err] [Parent 290, IPC I/O Parent] WARNING: process 529 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=290][err] [570] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][out]       console.error: (new TypeError("can't access property \"maybeCancelContentJSExecution\", this._browser.frameLoader.remoteTab is null", "resource://gre/modules/RemoteWebNavigation.sys.mjs", 41))
+    [pid=290][err] [Parent 290, IPC I/O Parent] WARNING: process 570 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=290][err] [608] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][err] [Parent 290, IPC I/O Parent] WARNING: process 608 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=290][out] console.error: "Error fetching remote settings base url from CDN. Falling back to https://firefox-settings-attachments.cdn.mozilla.net/" (new SyntaxError("XMLHttpRequest.open: '/' is not a valid URL.", (void 0), 126))
+    [pid=290][out] console.error: services.settings: 
+    [pid=290][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+    [pid=290][out]   Stack:
+    [pid=290][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=290][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=290][out] 
+    [pid=290][err] [670] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=290][out] console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1299"  data: no]
+    [pid=290][err] JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 4380: NotAllowedError: PathUtils.join: PathUtils does not support empty paths
+    [pid=290] <gracefully close start>
+
+    Error Context: test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [firefox] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus 
+
+    Test timeout of 30000ms exceeded while setting up "page".
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/firefox-1538/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-VB9epz -juggler-pipe -silent
+    <launched> pid=332
+    [pid=332][err] *** You are running in headless mode.
+    [pid=332][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 119: unreachable code after return statement
+    [pid=332][out] 
+    [pid=332][out] Juggler listening to the pipe
+    [pid=332][err] [613] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][err] [625] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][err] [630] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][err] [Parent 332, IPC I/O Parent] WARNING: process 625 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=332][err] [634] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][err] [Parent 332, IPC I/O Parent] WARNING: process 634 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=332][err] [659] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][err] [Parent 332, IPC I/O Parent] WARNING: process 659 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=332][err] [667] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][err] [682] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][out] 
+    [pid=332][out]         ERROR: ERROR: cannot find session with id "cb5796af-c1bc-4d20-a45a-32db19ae93a9" _dispatch@chrome://juggler/content/protocol/Dispatcher.js:54:15
+    [pid=332][out] receiveMessage@chrome://juggler/content/components/Juggler.js:121:20
+    [pid=332][out] 
+    [pid=332][err] [Parent 332, IPC I/O Parent] WARNING: process 667 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=332][err] [Parent 332, IPC I/O Parent] WARNING: process 682 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=332][err] [693] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][out]       console.error: (new TypeError("can't access property \"maybeCancelContentJSExecution\", this._browser.frameLoader.remoteTab is null", "resource://gre/modules/RemoteWebNavigation.sys.mjs", 41))
+    [pid=332][err] [Parent 332, IPC I/O Parent] WARNING: process 693 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=332][err] [699] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][err] [Parent 332, IPC I/O Parent] WARNING: process 699 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=332][out] console.error: "Error fetching remote settings base url from CDN. Falling back to https://firefox-settings-attachments.cdn.mozilla.net/" (new SyntaxError("XMLHttpRequest.open: '/' is not a valid URL.", (void 0), 126))
+    [pid=332][out] console.error: services.settings: 
+    [pid=332][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+    [pid=332][out]   Stack:
+    [pid=332][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=332][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=332][out] 
+    [pid=332][err] [718] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=332][out] console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1299"  data: no]
+    [pid=332][err] JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 4380: NotAllowedError: PathUtils.join: PathUtils does not support empty paths
+    [pid=332][err] JavaScript warning: resource://gre/modules/UpdateService.sys.mjs, line 4029: unreachable code after return statement
+    [pid=332] <gracefully close start>
+
+    Error Context: test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [firefox] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript 
+
+    Test timeout of 30000ms exceeded while setting up "page".
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/firefox-1538/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-2l6CMX -juggler-pipe -silent
+    <launched> pid=323
+    [pid=323][err] *** You are running in headless mode.
+    [pid=323][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 119: unreachable code after return statement
+    [pid=323][out] 
+    [pid=323][out] Juggler listening to the pipe
+    [pid=323][err] [499] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][err] [523] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][err] [528] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][err] [Parent 323, IPC I/O Parent] WARNING: process 523 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=323][err] [567] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][err] [Parent 323, IPC I/O Parent] WARNING: process 567 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=323][err] [593] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][err] [Parent 323, IPC I/O Parent] WARNING: process 593 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=323][err] [601] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][err] [618] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][err] [Parent 323, IPC I/O Parent] WARNING: process 601 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=323][out] 
+    [pid=323][out]         ERROR: ERROR: cannot find session with id "06aebad8-a976-4b6d-9714-f8a7ddb7c272" _dispatch@chrome://juggler/content/protocol/Dispatcher.js:54:15
+    [pid=323][out] receiveMessage@chrome://juggler/content/components/Juggler.js:121:20
+    [pid=323][out] 
+    [pid=323][err] [Parent 323, IPC I/O Parent] WARNING: process 618 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=323][err] [637] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][err] [Parent 323, IPC I/O Parent] WARNING: process 637 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=323][err] [640] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][out]       console.error: (new TypeError("can't access property \"maybeCancelContentJSExecution\", this._browser.frameLoader.remoteTab is null", "resource://gre/modules/RemoteWebNavigation.sys.mjs", 41))
+    [pid=323][err] [Parent 323, IPC I/O Parent] WARNING: process 640 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=323][out] console.error: "Error fetching remote settings base url from CDN. Falling back to https://firefox-settings-attachments.cdn.mozilla.net/" (new SyntaxError("XMLHttpRequest.open: '/' is not a valid URL.", (void 0), 126))
+    [pid=323][out] console.error: services.settings: 
+    [pid=323][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+    [pid=323][out]   Stack:
+    [pid=323][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=323][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=323][out] 
+    [pid=323][err] [703] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=323][out] console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1299"  data: no]
+    [pid=323][err] JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 4380: NotAllowedError: PathUtils.join: PathUtils does not support empty paths
+    [pid=323][err] JavaScript warning: resource://gre/modules/UpdateService.sys.mjs, line 4029: unreachable code after return statement
+    [pid=323] <gracefully close start>
+
+    Error Context: test-results/no-js-essential-content-remains-available-without-JavaScript-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/no-js-essential-content-remains-available-without-JavaScript-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/no-js-essential-content-remains-available-without-JavaScript-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [firefox] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px ───────────
+
+    Test timeout of 30000ms exceeded while setting up "page".
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/firefox-1538/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-i8GRIX -juggler-pipe -silent
+    <launched> pid=749
+    [pid=749][err] *** You are running in headless mode.
+    [pid=749][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 119: unreachable code after return statement
+    [pid=749][out] 
+    [pid=749][out] Juggler listening to the pipe
+    [pid=749][err] [824] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][err] [827] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][err] [830] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][err] [Parent 749, IPC I/O Parent] WARNING: process 827 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=749][err] [833] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][err] [Parent 749, IPC I/O Parent] WARNING: process 833 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=749][err] [836] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][err] [Parent 749, IPC I/O Parent] WARNING: process 836 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=749][err] [839] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][err] [842] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][out] 
+    [pid=749][out]         ERROR: ERROR: cannot find session with id "f6b5a5f4-07ad-4b60-94d3-c7eb15b79615" _dispatch@chrome://juggler/content/protocol/Dispatcher.js:54:15
+    [pid=749][out] receiveMessage@chrome://juggler/content/components/Juggler.js:121:20
+    [pid=749][out] 
+    [pid=749][err] [Parent 749, IPC I/O Parent] WARNING: process 839 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=749][err] [Parent 749, IPC I/O Parent] WARNING: process 842 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=749][err] [849] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][out]       console.error: (new TypeError("can't access property \"maybeCancelContentJSExecution\", this._browser.frameLoader.remoteTab is null", "resource://gre/modules/RemoteWebNavigation.sys.mjs", 41))
+    [pid=749][err] [Parent 749, IPC I/O Parent] WARNING: process 849 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=749][err] [856] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][err] [Parent 749, IPC I/O Parent] WARNING: process 856 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=749][out] console.error: "Error fetching remote settings base url from CDN. Falling back to https://firefox-settings-attachments.cdn.mozilla.net/" (new SyntaxError("XMLHttpRequest.open: '/' is not a valid URL.", (void 0), 126))
+    [pid=749][out] console.error: services.settings: 
+    [pid=749][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+    [pid=749][out]   Stack:
+    [pid=749][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=749][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=749][out] 
+    [pid=749][err] [866] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=749][out] console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1299"  data: no]
+    [pid=749][err] JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 4380: NotAllowedError: PathUtils.join: PathUtils does not support empty paths
+    [pid=749][err] JavaScript warning: resource://gre/modules/UpdateService.sys.mjs, line 4029: unreachable code after return statement
+    [pid=749] <gracefully close start>
+
+    Error Context: test-results/responsive-has-no-horizontal-overflow-at-390px-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/responsive-has-no-horizontal-overflow-at-390px-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/responsive-has-no-horizontal-overflow-at-390px-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [firefox] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px ──────────
+
+    Test timeout of 30000ms exceeded while setting up "page".
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/firefox-1538/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-ePvU2Y -juggler-pipe -silent
+    <launched> pid=934
+    [pid=934][err] *** You are running in headless mode.
+    [pid=934][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 119: unreachable code after return statement
+    [pid=934][out] 
+    [pid=934][out] Juggler listening to the pipe
+    [pid=934][err] [1033] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][err] [1055] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][err] [1060] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][err] [Parent 934, IPC I/O Parent] WARNING: process 1055 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=934][err] [1075] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][err] [Parent 934, IPC I/O Parent] WARNING: process 1075 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=934][err] [1086] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][err] [Parent 934, IPC I/O Parent] WARNING: process 1086 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=934][err] [1089] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][err] [1125] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][err] [Parent 934, IPC I/O Parent] WARNING: process 1089 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=934][out] 
+    [pid=934][out]         ERROR: ERROR: cannot find session with id "ed4909af-4a1f-49bb-b23f-5012e79f78de" _dispatch@chrome://juggler/content/protocol/Dispatcher.js:54:15
+    [pid=934][out] receiveMessage@chrome://juggler/content/components/Juggler.js:121:20
+    [pid=934][out] 
+    [pid=934][err] [Parent 934, IPC I/O Parent] WARNING: process 1125 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=934][err] [1138] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][out]       console.error: (new TypeError("can't access property \"maybeCancelContentJSExecution\", this._browser.frameLoader.remoteTab is null", "resource://gre/modules/RemoteWebNavigation.sys.mjs", 41))
+    [pid=934][err] [Parent 934, IPC I/O Parent] WARNING: process 1138 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=934][err] [1209] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][err] [Parent 934, IPC I/O Parent] WARNING: process 1209 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=934][out] console.error: "Error fetching remote settings base url from CDN. Falling back to https://firefox-settings-attachments.cdn.mozilla.net/" (new SyntaxError("XMLHttpRequest.open: '/' is not a valid URL.", (void 0), 126))
+    [pid=934][out] console.error: services.settings: 
+    [pid=934][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+    [pid=934][out]   Stack:
+    [pid=934][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=934][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=934][out] 
+    [pid=934][err] [1278] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=934][out] console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1299"  data: no]
+    [pid=934][err] JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 4380: NotAllowedError: PathUtils.join: PathUtils does not support empty paths
+    [pid=934] <gracefully close start>
+
+    Error Context: test-results/responsive-has-no-horizontal-overflow-at-1440px-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/responsive-has-no-horizontal-overflow-at-1440px-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/responsive-has-no-horizontal-overflow-at-1440px-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [firefox] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors 
+
+    Test timeout of 30000ms exceeded while setting up "page".
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/firefox-1538/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-RgVqfO -juggler-pipe -silent
+    <launched> pid=1023
+    [pid=1023][err] *** You are running in headless mode.
+    [pid=1023][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 119: unreachable code after return statement
+    [pid=1023][out] 
+    [pid=1023][out] Juggler listening to the pipe
+    [pid=1023][err] [1135] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][err] [1160] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][err] [1166] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][err] [Parent 1023, IPC I/O Parent] WARNING: process 1160 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1023][err] [1183] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][err] [Parent 1023, IPC I/O Parent] WARNING: process 1183 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1023][err] [1241] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][err] [Parent 1023, IPC I/O Parent] WARNING: process 1241 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1023][err] [1249] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][err] [1264] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][out] 
+    [pid=1023][out]         ERROR: ERROR: cannot find session with id "0f0e08af-cf96-495f-ad34-e24ed5d11577" _dispatch@chrome://juggler/content/protocol/Dispatcher.js:54:15
+    [pid=1023][out] receiveMessage@chrome://juggler/content/components/Juggler.js:121:20
+    [pid=1023][out] 
+    [pid=1023][err] [Parent 1023, IPC I/O Parent] WARNING: process 1249 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1023][err] [Parent 1023, IPC I/O Parent] WARNING: process 1264 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1023][err] [1282] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][out]       console.error: (new TypeError("can't access property \"maybeCancelContentJSExecution\", this._browser.frameLoader.remoteTab is null", "resource://gre/modules/RemoteWebNavigation.sys.mjs", 41))
+    [pid=1023][err] [Parent 1023, IPC I/O Parent] WARNING: process 1282 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1023][err] [1298] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][err] [Parent 1023, IPC I/O Parent] WARNING: process 1298 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1023][out] console.error: "Error fetching remote settings base url from CDN. Falling back to https://firefox-settings-attachments.cdn.mozilla.net/" (new SyntaxError("XMLHttpRequest.open: '/' is not a valid URL.", (void 0), 126))
+    [pid=1023][out] console.error: services.settings: 
+    [pid=1023][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+    [pid=1023][out]   Stack:
+    [pid=1023][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=1023][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=1023][out] 
+    [pid=1023][err] [1321] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1023][out] console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1299"  data: no]
+    [pid=1023][err] JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 4380: NotAllowedError: PathUtils.join: PathUtils does not support empty paths
+    [pid=1023] <gracefully close start>
+    [pid=1023][err] JavaScript warning: resource://gre/modules/UpdateService.sys.mjs, line 4029: unreachable code after return statement
+
+    Error Context: test-results/smoke-loads-the-prerendered-landing-without-browser-errors-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-loads-the-prerendered-landing-without-browser-errors-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-loads-the-prerendered-landing-without-browser-errors-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [firefox] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target ────────────────────
+
+    Test timeout of 30000ms exceeded while setting up "page".
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /tmp/landing-toolchain-vryh8H/browsers/firefox-1538/firefox/firefox -no-remote -headless -profile /tmp/playwright_firefoxdev_profile-8ZgoFG -juggler-pipe -silent
+    <launched> pid=1119
+    [pid=1119][err] *** You are running in headless mode.
+    [pid=1119][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 119: unreachable code after return statement
+    [pid=1119][out] 
+    [pid=1119][out] Juggler listening to the pipe
+    [pid=1119][err] [1255] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][err] [1271] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][err] [1276] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][err] [Parent 1119, IPC I/O Parent] WARNING: process 1271 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1119][err] [1283] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][err] [Parent 1119, IPC I/O Parent] WARNING: process 1283 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1119][err] [1295] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][err] [Parent 1119, IPC I/O Parent] WARNING: process 1295 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1119][err] [1301] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][err] [1305] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][out] 
+    [pid=1119][out]         ERROR: ERROR: cannot find session with id "d4e94e96-0890-4b3c-a7f6-266be0af1d49" _dispatch@chrome://juggler/content/protocol/Dispatcher.js:54:15
+    [pid=1119][out] receiveMessage@chrome://juggler/content/components/Juggler.js:121:20
+    [pid=1119][out] 
+    [pid=1119][err] [Parent 1119, IPC I/O Parent] WARNING: process 1301 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1119][err] [Parent 1119, IPC I/O Parent] WARNING: process 1305 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1119][err] [1317] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][out]       console.error: (new TypeError("can't access property \"maybeCancelContentJSExecution\", this._browser.frameLoader.remoteTab is null", "resource://gre/modules/RemoteWebNavigation.sys.mjs", 41))
+    [pid=1119][err] [Parent 1119, IPC I/O Parent] WARNING: process 1317 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1119][err] [1331] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][err] [Parent 1119, IPC I/O Parent] WARNING: process 1331 exited on signal 11: file ipc/chromium/src/chrome/common/process_watcher_posix_sigchld.cc:161
+    [pid=1119][out] console.error: "Error fetching remote settings base url from CDN. Falling back to https://firefox-settings-attachments.cdn.mozilla.net/" (new SyntaxError("XMLHttpRequest.open: '/' is not a valid URL.", (void 0), 126))
+    [pid=1119][out] console.error: services.settings: 
+    [pid=1119][out]   Message: EmptyDatabaseError: "main/nimbus-desktop-experiments" has not been synced yet
+    [pid=1119][out]   Stack:
+    [pid=1119][out]     EmptyDatabaseError@resource://services-settings/Database.sys.mjs:19:5
+    [pid=1119][out] list@resource://services-settings/Database.sys.mjs:96:13
+    [pid=1119][out] 
+    [pid=1119][err] [1341] Sandbox: writing /proc/self/uid_map: EPERM
+    [pid=1119][out] console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1299"  data: no]
+    [pid=1119][err] JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 4380: NotAllowedError: PathUtils.join: PathUtils does not support empty paths
+    [pid=1119] <gracefully close start>
+
+    Error Context: test-results/smoke-primary-CTA-reaches-its-target-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-primary-CTA-reaches-its-target-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-primary-CTA-reaches-its-target-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [webkit] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks ───────
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgstreamer-1.0.so.0                            ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libevent-2.1.so.7                                ║
+    ║     libgstallocators-1.0.so.0                        ║
+    ║     libgstapp-1.0.so.0                               ║
+    ║     libgstbase-1.0.so.0                              ║
+    ║     libgstpbutils-1.0.so.0                           ║
+    ║     libgstaudio-1.0.so.0                             ║
+    ║     libgsttag-1.0.so.0                               ║
+    ║     libgstvideo-1.0.so.0                             ║
+    ║     libgstgl-1.0.so.0                                ║
+    ║     libgstcodecparsers-1.0.so.0                      ║
+    ║     libgstfft-1.0.so.0                               ║
+    ║     libavif.so.16                                    ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libwayland-server.so.0                           ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libsecret-1.so.0                                 ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/accessibility-passes-automated-WCAG-2-2-A-AA-checks-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [webkit] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgstreamer-1.0.so.0                            ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libevent-2.1.so.7                                ║
+    ║     libgstallocators-1.0.so.0                        ║
+    ║     libgstapp-1.0.so.0                               ║
+    ║     libgstbase-1.0.so.0                              ║
+    ║     libgstpbutils-1.0.so.0                           ║
+    ║     libgstaudio-1.0.so.0                             ║
+    ║     libgsttag-1.0.so.0                               ║
+    ║     libgstvideo-1.0.so.0                             ║
+    ║     libgstgl-1.0.so.0                                ║
+    ║     libgstcodecparsers-1.0.so.0                      ║
+    ║     libgstfft-1.0.so.0                               ║
+    ║     libavif.so.16                                    ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libwayland-server.so.0                           ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libsecret-1.so.0                                 ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/accessibility-exposes-landmarks-and-a-visible-keyboard-focus-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [webkit] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgstreamer-1.0.so.0                            ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libevent-2.1.so.7                                ║
+    ║     libgstallocators-1.0.so.0                        ║
+    ║     libgstapp-1.0.so.0                               ║
+    ║     libgstbase-1.0.so.0                              ║
+    ║     libgstpbutils-1.0.so.0                           ║
+    ║     libgstaudio-1.0.so.0                             ║
+    ║     libgsttag-1.0.so.0                               ║
+    ║     libgstvideo-1.0.so.0                             ║
+    ║     libgstgl-1.0.so.0                                ║
+    ║     libgstcodecparsers-1.0.so.0                      ║
+    ║     libgstfft-1.0.so.0                               ║
+    ║     libavif.so.16                                    ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libwayland-server.so.0                           ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libsecret-1.so.0                                 ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/no-js-essential-content-remains-available-without-JavaScript-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/no-js-essential-content-remains-available-without-JavaScript-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/no-js-essential-content-remains-available-without-JavaScript-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [webkit] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px ────────────
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgstreamer-1.0.so.0                            ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libevent-2.1.so.7                                ║
+    ║     libgstallocators-1.0.so.0                        ║
+    ║     libgstapp-1.0.so.0                               ║
+    ║     libgstbase-1.0.so.0                              ║
+    ║     libgstpbutils-1.0.so.0                           ║
+    ║     libgstaudio-1.0.so.0                             ║
+    ║     libgsttag-1.0.so.0                               ║
+    ║     libgstvideo-1.0.so.0                             ║
+    ║     libgstgl-1.0.so.0                                ║
+    ║     libgstcodecparsers-1.0.so.0                      ║
+    ║     libgstfft-1.0.so.0                               ║
+    ║     libavif.so.16                                    ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libwayland-server.so.0                           ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libsecret-1.so.0                                 ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/responsive-has-no-horizontal-overflow-at-390px-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/responsive-has-no-horizontal-overflow-at-390px-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/responsive-has-no-horizontal-overflow-at-390px-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [webkit] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px ───────────
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgstreamer-1.0.so.0                            ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libevent-2.1.so.7                                ║
+    ║     libgstallocators-1.0.so.0                        ║
+    ║     libgstapp-1.0.so.0                               ║
+    ║     libgstbase-1.0.so.0                              ║
+    ║     libgstpbutils-1.0.so.0                           ║
+    ║     libgstaudio-1.0.so.0                             ║
+    ║     libgsttag-1.0.so.0                               ║
+    ║     libgstvideo-1.0.so.0                             ║
+    ║     libgstgl-1.0.so.0                                ║
+    ║     libgstcodecparsers-1.0.so.0                      ║
+    ║     libgstfft-1.0.so.0                               ║
+    ║     libavif.so.16                                    ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libwayland-server.so.0                           ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libsecret-1.so.0                                 ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/responsive-has-no-horizontal-overflow-at-1440px-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/responsive-has-no-horizontal-overflow-at-1440px-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/responsive-has-no-horizontal-overflow-at-1440px-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [webkit] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgstreamer-1.0.so.0                            ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libevent-2.1.so.7                                ║
+    ║     libgstallocators-1.0.so.0                        ║
+    ║     libgstapp-1.0.so.0                               ║
+    ║     libgstbase-1.0.so.0                              ║
+    ║     libgstpbutils-1.0.so.0                           ║
+    ║     libgstaudio-1.0.so.0                             ║
+    ║     libgsttag-1.0.so.0                               ║
+    ║     libgstvideo-1.0.so.0                             ║
+    ║     libgstgl-1.0.so.0                                ║
+    ║     libgstcodecparsers-1.0.so.0                      ║
+    ║     libgstfft-1.0.so.0                               ║
+    ║     libavif.so.16                                    ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libwayland-server.so.0                           ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libsecret-1.so.0                                 ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/smoke-loads-the-prerendered-landing-without-browser-errors-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-loads-the-prerendered-landing-without-browser-errors-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-loads-the-prerendered-landing-without-browser-errors-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [webkit] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target ─────────────────────
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgstreamer-1.0.so.0                            ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libevent-2.1.so.7                                ║
+    ║     libgstallocators-1.0.so.0                        ║
+    ║     libgstapp-1.0.so.0                               ║
+    ║     libgstbase-1.0.so.0                              ║
+    ║     libgstpbutils-1.0.so.0                           ║
+    ║     libgstaudio-1.0.so.0                             ║
+    ║     libgsttag-1.0.so.0                               ║
+    ║     libgstvideo-1.0.so.0                             ║
+    ║     libgstgl-1.0.so.0                                ║
+    ║     libgstcodecparsers-1.0.so.0                      ║
+    ║     libgstfft-1.0.so.0                               ║
+    ║     libavif.so.16                                    ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libwayland-server.so.0                           ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libsecret-1.so.0                                 ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/smoke-primary-CTA-reaches-its-target-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-primary-CTA-reaches-its-target-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-primary-CTA-reaches-its-target-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21 failed
+    [chrome] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks ─────────
+    [chrome] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus 
+    [chrome] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript 
+    [chrome] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px ──────────────
+    [chrome] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px ─────────────
+    [chrome] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors ──
+    [chrome] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target ───────────────────────
+    [firefox] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks ────────
+    [firefox] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus 
+    [firefox] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript 
+    [firefox] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px ─────────────
+    [firefox] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px ────────────
+    [firefox] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors ─
+    [firefox] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target ──────────────────────
+    [webkit] › tests/e2e/accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks ─────────
+    [webkit] › tests/e2e/accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus 
+    [webkit] › tests/e2e/no-js.spec.ts:7:1 › essential content remains available without JavaScript 
+    [webkit] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 390px ──────────────
+    [webkit] › tests/e2e/responsive.spec.ts:7:3 › has no horizontal overflow at 1440px ─────────────
+    [webkit] › tests/e2e/smoke.spec.ts:5:1 › loads the prerendered landing without browser errors ──
+    [webkit] › tests/e2e/smoke.spec.ts:34:1 › primary CTA reaches its target ───────────────────────
+  3 passed (1.2m)
+error: script "test:compat:built" exited with code 1
+error: script "test:compat" exited with code 1

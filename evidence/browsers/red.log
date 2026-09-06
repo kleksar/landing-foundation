@@ -1,0 +1,79 @@
+$ vitest run --config vitest.repo.config.ts tests/repo/browser-policy.contract.test.ts
+
+ RUN  v4.1.11 /workspace/scratch/77210dfccb4d
+
+ ❯ tests/repo/browser-policy.contract.test.ts (2 tests | 2 failed) 8ms
+     × keeps the verification loop on full Chromium with reduced motion 5ms
+     × runs the same site against three explicit compatibility browsers with normal motion 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/repo/browser-policy.contract.test.ts > browser execution policy > keeps the verification loop on full Chromium with reduced motion
+AssertionError: expected undefined to deeply equal { name: 'chromium', …(3) }
+
+- Expected:
+{
+  "browserName": "chromium",
+  "channel": "chromium",
+  "name": "chromium",
+  "reducedMotion": "reduce",
+}
+
++ Received:
+undefined
+
+ ❯ tests/repo/browser-policy.contract.test.ts:21:69
+     19| describe("browser execution policy", () => {
+     20|   it("keeps the verification loop on full Chromium with reduced motion…
+     21|     expect(policies.find((project) => project.name === "chromium")).to…
+       |                                                                     ^
+     22|       name: "chromium",
+     23|       browserName: "chromium",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/repo/browser-policy.contract.test.ts > browser execution policy > runs the same site against three explicit compatibility browsers with normal motion
+AssertionError: expected [] to deeply equal [ { name: 'chrome', …(3) }, …(2) ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "browserName": "chromium",
+-     "channel": "chrome",
+-     "name": "chrome",
+-     "reducedMotion": "no-preference",
+-   },
+-   {
+-     "browserName": "firefox",
+-     "channel": undefined,
+-     "name": "firefox",
+-     "reducedMotion": "no-preference",
+-   },
+-   {
+-     "browserName": "webkit",
+-     "channel": undefined,
+-     "name": "webkit",
+-     "reducedMotion": "no-preference",
+-   },
+- ]
++ []
+
+ ❯ tests/repo/browser-policy.contract.test.ts:33:71
+     31|
+     32|   it("runs the same site against three explicit compatibility browsers…
+     33|     expect(policies.filter((project) => project.name !== "chromium")).…
+       |                                                                       ^
+     34|       {
+     35|         name: "chrome",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  23:26:06
+   Duration  421ms (transform 23ms, setup 0ms, import 283ms, tests 8ms, environment 0ms)
+
+error: script "test:repo" exited with code 1

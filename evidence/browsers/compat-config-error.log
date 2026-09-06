@@ -1,0 +1,71 @@
+$ bun run build && bun run test:compat:built --config "/tmp/landing-browser-stage42/playwright.compat.config.ts"
+$ react-router build
+Using Vite Environment API
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 85 modules transformed.
+rendering chunks...
+computing gzip size...
+build/client/robots.txt                            0.06 kB │ gzip:  0.08 kB
+build/client/sitemap.xml                           0.15 kB │ gzip:  0.14 kB
+build/client/.vite/manifest.json                   1.55 kB │ gzip:  0.42 kB
+build/client/assets/root-BJjnIp69.css              6.88 kB │ gzip:  2.47 kB
+build/client/assets/home-Bh3aYLpq.js               1.85 kB │ gzip:  0.83 kB
+build/client/assets/site.config-Od4zza8U.js        1.95 kB │ gzip:  0.93 kB
+build/client/assets/root-CX-Ou8KU.js              11.27 kB │ gzip:  4.46 kB
+build/client/assets/errorBoundaries-C8kmSvMZ.js   33.31 kB │ gzip: 11.66 kB
+build/client/assets/jsx-runtime-BSIt80zW.js       85.23 kB │ gzip: 28.34 kB
+build/client/assets/entry.client-C1m3x04Y.js     185.85 kB │ gzip: 58.60 kB
+
+✓ built in 432ms
+vite v8.2.2 building ssr environment for production...
+transforming...
+✓ 11 modules transformed.
+rendering chunks...
+
+✓ 1 asset cleaned from React Router server build.
+build/server/assets/server-build-BJjnIp69.css
+
+computing gzip size...
+build/server/robots.txt                         0.06 kB │ gzip: 0.08 kB
+build/server/sitemap.xml                        0.15 kB │ gzip: 0.14 kB
+build/server/.vite/manifest.json                0.22 kB │ gzip: 0.15 kB
+build/server/assets/server-build-BJjnIp69.css   6.88 kB │ gzip: 2.47 kB
+build/server/index.js                          12.51 kB │ gzip: 4.07 kB
+
+✓ built in 129ms
+Prerender (html): / -> build/client/index.html
+Prerender (html): SPA Fallback -> build/client/__spa-fallback.html
+$ playwright test --project=chrome --project=firefox --project=webkit --config "/tmp/landing-browser-stage42/playwright.compat.config.ts"
+(node:58) Warning: Failed to load the ES module: /workspace/scratch/77210dfccb4d/playwright.config.ts. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+/workspace/scratch/77210dfccb4d/playwright.config.ts:9
+const repoRoot = import.meta.dirname;
+                        ^^^^
+
+SyntaxError: Cannot use 'import.meta' outside a module
+    at wrapSafe (node:internal/modules/cjs/loader:1861:18)
+    at Module._compile (node:internal/modules/cjs/loader:1903:20)
+    at Object.<anonymous> (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.require (node:internal/modules/cjs/loader:1674:12)
+    at require (node:internal/modules/helpers:157:16)
+    at Object.<anonymous> (/tmp/landing-browser-stage42/playwright.compat.config.ts:2:1)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object.<anonymous> (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.require (node:internal/modules/cjs/loader:1674:12)
+    at require (node:internal/modules/helpers:157:16)
+    at requireOrImport (/workspace/scratch/77210dfccb4d/node_modules/.bun/playwright@1.62.1/node_modules/playwright/lib/common/index.js:1138:18)
+    at loadUserConfig (/workspace/scratch/77210dfccb4d/node_modules/.bun/playwright@1.62.1/node_modules/playwright/lib/common/index.js:1323:52)
+    at loadConfig (/workspace/scratch/77210dfccb4d/node_modules/.bun/playwright@1.62.1/node_modules/playwright/lib/common/index.js:1330:28)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at Object.loadConfigFromFile (/workspace/scratch/77210dfccb4d/node_modules/.bun/playwright@1.62.1/node_modules/playwright/lib/common/index.js:1546:10)
+    at runTests (/workspace/scratch/77210dfccb4d/node_modules/.bun/playwright@1.62.1/node_modules/playwright/lib/cli/testActions.js:46:18)
+    at _Command.<anonymous> (/workspace/scratch/77210dfccb4d/node_modules/.bun/playwright@1.62.1/node_modules/playwright/lib/program.js:55:7)
+error: script "test:compat:built" exited with code 1
+error: script "test:compat" exited with code 1

@@ -1,0 +1,27 @@
+$ playwright test --project=chrome --project=firefox --project=webkit --list
+Listing tests:
+  [chrome] › accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks
+  [chrome] › accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus
+  [chrome] › no-js.spec.ts:7:1 › essential content remains available without JavaScript
+  [chrome] › responsive.spec.ts:7:3 › has no horizontal overflow at 390px
+  [chrome] › responsive.spec.ts:7:3 › has no horizontal overflow at 1440px
+  [chrome] › smoke.spec.ts:5:1 › loads the prerendered landing without browser errors
+  [chrome] › smoke.spec.ts:34:1 › primary CTA reaches its target
+  [chrome] › smoke.spec.ts:39:1 › unknown routes return a real 404
+  [firefox] › accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks
+  [firefox] › accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus
+  [firefox] › no-js.spec.ts:7:1 › essential content remains available without JavaScript
+  [firefox] › responsive.spec.ts:7:3 › has no horizontal overflow at 390px
+  [firefox] › responsive.spec.ts:7:3 › has no horizontal overflow at 1440px
+  [firefox] › smoke.spec.ts:5:1 › loads the prerendered landing without browser errors
+  [firefox] › smoke.spec.ts:34:1 › primary CTA reaches its target
+  [firefox] › smoke.spec.ts:39:1 › unknown routes return a real 404
+  [webkit] › accessibility.spec.ts:4:1 › passes automated WCAG 2.2 A/AA checks
+  [webkit] › accessibility.spec.ts:14:1 › exposes landmarks and a visible keyboard focus
+  [webkit] › no-js.spec.ts:7:1 › essential content remains available without JavaScript
+  [webkit] › responsive.spec.ts:7:3 › has no horizontal overflow at 390px
+  [webkit] › responsive.spec.ts:7:3 › has no horizontal overflow at 1440px
+  [webkit] › smoke.spec.ts:5:1 › loads the prerendered landing without browser errors
+  [webkit] › smoke.spec.ts:34:1 › primary CTA reaches its target
+  [webkit] › smoke.spec.ts:39:1 › unknown routes return a real 404
+Total: 24 tests in 4 files

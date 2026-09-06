@@ -1,0 +1,55 @@
+{
+  "archives": [
+    {
+      "name": "chromium-pinned",
+      "size": 193282658,
+      "sha256": "ae8736ac28bc69278551500f219fc749575648263c43ec5990749eff43b9fcf8",
+      "crc": "pass",
+      "roots": [
+        "chrome-linux64"
+      ],
+      "url": "https://storage.googleapis.com/chrome-for-testing-public/151.0.7922.34/linux64/chrome-linux64.zip",
+      "download": "curl exit 0, HTTP 200",
+      "sha256_note": "Computed locally for artifact identity; not compared with publisher checksum."
+    },
+    {
+      "name": "firefox-pinned",
+      "size": 113412908,
+      "sha256": "49208d3ed74e525575eca41d053082902b88933e31943a091d25080bdfcfcb25",
+      "crc": "pass",
+      "roots": [
+        "firefox"
+      ],
+      "url": "https://playwright.download.prss.microsoft.com/dbazure/download/playwright/builds/firefox/1538/firefox-ubuntu-24.04.zip",
+      "download": "curl exit 0, HTTP 200",
+      "sha256_note": "Computed locally for artifact identity; not compared with publisher checksum."
+    },
+    {
+      "name": "webkit-pinned",
+      "size": 106966125,
+      "sha256": "357cd5d52f0770f01a86c1e0e2e193b5cfdb760452fc766e26eb5c8ee3951345",
+      "crc": "pass",
+      "roots": [
+        "minibrowser-gtk",
+        "minibrowser-wpe",
+        "protocol.json",
+        "pw_run.sh"
+      ],
+      "url": "https://playwright.download.prss.microsoft.com/dbazure/download/playwright/builds/webkit/2336/webkit-ubuntu-24.04.zip",
+      "download": "curl exit 0, HTTP 200",
+      "sha256_note": "Computed locally for artifact identity; not compared with publisher checksum."
+    }
+  ],
+  "extraction": "unzip exit 0 into expected pinned revision directories, permissions preserved; INSTALLATION_COMPLETE created after CRC and extraction; previous headless shell retained",
+  "chromium_version_command": "Google Chrome for Testing 151.0.7922.34",
+  "launch_log": "pinned-node-launch.jsonl",
+  "launch_results": {
+    "chromium": "blocked: sandbox socket() Operation not permitted in process_singleton_posix.cc",
+    "firefox": "launched; browser.version() = 153.0",
+    "webkit": "blocked: missing host libraries, full list in launch log"
+  },
+  "bun_smoke": "No output; interrupted with SIGINT exit 130. Node 24.20.0 used for explicit launch outcomes.",
+  "production_repo_changes": false,
+  "system_package_install": false,
+  "access_control_changes": false
+}

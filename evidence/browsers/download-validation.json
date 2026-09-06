@@ -1,0 +1,32 @@
+[
+  {
+    "name": "chromium-pinned",
+    "size": 193282658,
+    "sha256": "ae8736ac28bc69278551500f219fc749575648263c43ec5990749eff43b9fcf8",
+    "crc": "pass",
+    "roots": [
+      "chrome-linux64"
+    ]
+  },
+  {
+    "name": "firefox-pinned",
+    "size": 113412908,
+    "sha256": "49208d3ed74e525575eca41d053082902b88933e31943a091d25080bdfcfcb25",
+    "crc": "pass",
+    "roots": [
+      "firefox"
+    ]
+  },
+  {
+    "name": "webkit-pinned",
+    "size": 106966125,
+    "sha256": "357cd5d52f0770f01a86c1e0e2e193b5cfdb760452fc766e26eb5c8ee3951345",
+    "crc": "pass",
+    "roots": [
+      "minibrowser-gtk",
+      "minibrowser-wpe",
+      "protocol.json",
+      "pw_run.sh"
+    ]
+  }
+]

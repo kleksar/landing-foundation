@@ -1,0 +1,62 @@
+{
+  "name": "landing-foundation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.0",
+  "engines": {
+    "bun": "1.4.x",
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "audit": "bun audit",
+    "build": "react-router build",
+    "check": "biome check --reporter=concise .",
+    "dev": "react-router dev",
+    "fix": "biome check --write .",
+    "format": "biome format --write .",
+    "preview": "bun tooling/static-preview/server.ts build/client",
+    "test": "bun run test:unit && bun run test:repo",
+    "test:compat": "bun run build && bun run test:compat:built",
+    "test:compat:built": "playwright test --project=chrome --project=firefox --project=webkit",
+    "test:contracts": "vitest run --config vitest.contract.config.ts",
+    "test:e2e": "bun run build && bun run test:e2e:built",
+    "test:e2e:built": "playwright test --project=chromium",
+    "test:repo": "vitest run --config vitest.repo.config.ts",
+    "test:unit": "vitest run --config vitest.config.ts",
+    "typecheck": "react-router typegen && tsc -p tsconfig.json",
+    "typegen": "react-router typegen",
+    "verify": "bun run check && bun run typecheck && bun run test:unit && bun run test:repo && bun run build && bun run test:contracts && bun run test:e2e:built"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@biomejs/biome": "2.5.12",
+    "@playwright/test": "1.62.1",
+    "@react-router/dev": "8.3.1",
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vite": "8.2.2",
+    "vitest": "4.1.11"
+  },
+  "optionalDependencies": {
+    "@biomejs/cli-darwin-arm64": "2.5.12",
+    "@biomejs/cli-darwin-x64": "2.5.12",
+    "@biomejs/cli-linux-arm64": "2.5.12",
+    "@biomejs/cli-linux-arm64-musl": "2.5.12",
+    "@biomejs/cli-linux-x64": "2.5.12",
+    "@biomejs/cli-linux-x64-musl": "2.5.12",
+    "@biomejs/cli-win32-arm64": "2.5.12",
+    "@biomejs/cli-win32-x64": "2.5.12"
+  },
+  "dependencies": {
+    "@react-router/node": "8.3.1",
+    "isbot": "5.2.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router": "8.3.1"
+  }
+}

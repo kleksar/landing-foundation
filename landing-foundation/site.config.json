@@ -1,0 +1,11 @@
+{
+  "canonicalUrl": "https://example.com/",
+  "description": "A verified starting point for AI-authored landing pages.",
+  "id": "starter",
+  "locale": "en",
+  "primaryCta": {
+    "href": "#foundation",
+    "label": "Inspect the foundation"
+  },
+  "title": "Landing Foundation"
+}

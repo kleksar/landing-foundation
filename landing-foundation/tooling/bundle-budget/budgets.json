@@ -1,0 +1,6 @@
+{
+  "maxHtmlDocumentGzip": 25600,
+  "singleImage": 307200,
+  "totalCssGzip": 40960,
+  "totalJsGzip": 153600
+}
