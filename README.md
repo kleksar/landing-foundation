@@ -4,8 +4,9 @@
 Один сайт на репозиторий; Bun / React / Vite / TypeScript. Композиция, тексты, типографика,
 палитра и анимации выбираются под задачу клиента.
 
-**Статус: самостоятельный starter; этап 4.2 — браузерные режимы настроены,
-полная приёмка заблокирована ограничениями среды. Это ещё не выпущенный GitHub template.**
+**Статус: самостоятельный starter; основной CI прошёл 59 тестов. Для этапа 4.2
+подготовлен отдельный CI совместимости, его первый запуск ещё не подтверждён.
+Это ещё не выпущенный GitHub template.**
 Результаты приёмки и ближайшая задача записаны в [дорожной карте](docs/roadmap.md).
 [Проба реализации](docs/evaluations/implementation.md) описывает отдельный пример и найденный
 при визуальном осмотре дефект; его оформление не переносится в общий starter.
@@ -18,7 +19,7 @@
 ## Получение проекта
 
 ```bash
-git clone https://github.com/kleksar/landing-foundation.git
+git clone git@github.com:kleksar/landing-foundation.git
 cd landing-foundation
 ```
 
@@ -92,8 +93,11 @@ bun run verify
 repository contracts, build, build contracts и E2E; `audit` запускается отдельно.
 Основной E2E использует полный Chromium в modern headless. Перед выпуском сайта и после
 изменений, чувствительных к браузеру, запускаем `bun run test:compat`: те же проверки в
-Chrome Stable, Firefox и WebKit с обычным motion-режимом. Дополнительные браузеры
-устанавливаются отдельно; команды и ограничения — в стратегии тестирования ниже.
+Chrome Stable, Firefox и WebKit с обычным motion-режимом. На GitHub это можно выполнить через
+**Actions → compatibility → Run workflow**: браузеры устанавливает runner. Этот workflow
+также запускается при push в `main` изменений тестов E2E, Playwright-конфига, manifest,
+lockfile или самого workflow. Для правок приложения/CSS нужен ручной запуск перед выпуском.
+Локальная установка браузеров и ограничения — в стратегии тестирования ниже.
 
 Подробности: [архитектура](docs/architecture.md), [стратегия тестирования](docs/testing.md).
 [Baseline этапа 2.1](docs/baseline.md) описывает проверки прежнего прототипа;

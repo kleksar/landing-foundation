@@ -38,6 +38,27 @@ before release and after changes to browser-sensitive behavior, CSS, or dependen
 from the frequent `verify` loop and its CI job. An unavailable browser is a blocked check, not a pass.
 `test:contracts` also expects a prior build. `bun run audit` is a separate dependency check.
 
+## GitHub compatibility run
+
+The separate `compatibility` workflow uses one disposable Ubuntu 24.04 runner. It installs the
+pinned dependencies and Firefox/WebKit OS libraries, refreshes Google Chrome Stable with
+`playwright install chrome --force`, records each launched browser's actual version, and runs
+`bun run test:compat --workers=1`. The force install is specific to this disposable CI runner;
+it is not an instruction to replace the browser on a developer's machine. The normal `verify`
+workflow remains separate. Browser installation follows the [Playwright CI guide](https://playwright.dev/docs/ci).
+
+It starts automatically on `main` pushes affecting its workflow file, `playwright.config.ts`,
+`package.json`, `bun.lock`, or `tests/e2e/**`. For application/CSS changes and before release,
+open **Actions → compatibility → Run workflow**, select the intended branch, and start the run.
+Check that the completed run targets the release commit; an earlier green commit is insufficient.
+No repository secrets or extra service accounts are required.
+
+Record the run URL, commit SHA, browser versions, test totals and any retries. Installation or
+browser-launch errors fail the job. Failure reports and traces are uploaded as `compatibility-evidence`
+when produced; installation failures remain in the job log. A version line proves launch only;
+acceptance requires the page tests to pass. Chrome Stable follows its release channel independently
+of the lockfile. See [browser acceptance](evaluations/browsers.md) for actual results and remaining gaps.
+
 ## Migration coverage
 
 Stage 2.2 removes 22 generator unit tests, two cross-workspace import-boundary tests, the multi-site
@@ -72,9 +93,9 @@ bunx --no-install playwright install firefox webkit
 ```
 
 If Chrome is absent, `bunx --no-install playwright install chrome` installs it system-wide;
-this command can replace an existing Chrome installation. It is not part of normal setup or CI.
+this command can replace an existing Chrome installation. It is not part of normal local setup.
 On a clean supported Linux host, add `--with-deps` to the required browser installation command
-to install OS libraries. CI installs only full Chromium, with `--no-shell`.
+to install OS libraries. The main `verify` CI installs only full Chromium, with `--no-shell`.
 
 The `chromium` channel opts into the full browser's modern headless mode; the default channel-less
 headless Chromium uses a separate shell. Firefox and WebKit are Playwright builds. WebKit on Linux
