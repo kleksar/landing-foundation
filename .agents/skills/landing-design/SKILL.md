@@ -31,6 +31,11 @@ No universal palette, typeface, rounded-card layout, section rhythm or animation
 Familiar patterns can be useful; choose them for this page. Meaningful variation comes from hierarchy,
 composition, information density, imagery and interaction emphasis, not a color swap or novelty alone.
 
+For a new direction, a deliberately different variant, or a substantive redesign, use the
+[UX/UI reference adapter](references/ux-ui-agent-skills.md#design-planning). It connects selected
+upstream guidance to this workflow without installing another instruction stack. Skip it for a
+local visual fix or implementation of an already complete design specification.
+
 ## Make DESIGN.md usable for implementation
 
 Record only rules needed by the actual page, using compact prose or tables. Cover:
