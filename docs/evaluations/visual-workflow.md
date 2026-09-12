@@ -33,6 +33,12 @@
 - В локальном `bun run verify` прошли 34 unit, 18 repository, 7 build contracts, production build
   с prerender и HTTP-тест 404. 7 browser-тестов не стартовали: штатный Chromium отсутствовал,
   его загрузка с CDN завершалась таймаутом. Этот запуск **не является успешным verify**.
+- После открытия [PR #2](https://github.com/kleksar/landing-foundation/pull/2) штатный
+  [GitHub Actions run](https://github.com/kleksar/landing-foundation/actions/runs/34725598744)
+  на коммите `2bbcd95ae7cb05f47b6c65d596a06f9387253950` завершился **success**:
+  lint, typecheck, build, audit и 67 тестов — 34 unit, 18 repository, 7 contracts, 8 E2E.
+  В логе подтверждён Chrome for Testing 151.0.7922.34. Это отдельное подтверждение полного
+  verify в штатной среде; локальное ограничение выше остаётся частью истории проверки.
 
 ## Сравнительная визуальная проба
 

@@ -48,8 +48,11 @@
   использовался только для отдельной визуальной пробы и не подменяет результат основного CI.
 - [Полный отчёт, снимки, воспроизводимые команды и ограничения](docs/evaluations/visual-workflow.md).
   Native discovery в jcode/Claude Code/Codex CLI здесь не проверено: эти клиенты отсутствуют.
-- Изменения подготавливаются отдельным PR. Следующее действие — проверить его основной CI;
-  затем рабочий клиент сможет использовать обновлённый вход из актуальной копии репозитория.
+- Открыт [PR #2](https://github.com/kleksar/landing-foundation/pull/2). На коммите `2bbcd95`
+  [штатный CI](https://github.com/kleksar/landing-foundation/actions/runs/34725598744) прошёл:
+  lint, typecheck, build, audit и 67 тестов (34 unit / 18 repo / 7 contracts / 8 E2E),
+  Chrome for Testing 151.0.7922.34. Финальные checks PR показывают состояние его текущей версии.
+  Следующий шаг после принятия PR — проверить native discovery в рабочем клиенте по workflow.
 
 ## Инженерная контрольная точка до этого захода
 
@@ -59,7 +62,8 @@
 - [Первый основной CI](https://github.com/kleksar/landing-foundation/actions/runs/34063589819)
   на этом коммите — **success**: lint, typecheck, build, 34 unit, 10 repository,
   7 build contracts и 8 full Chromium E2E — **59 тестов**; audit не нашёл уязвимостей.
-  Использован Chrome for Testing 151.0.7922.34. Это последний подтверждённый полный verify.
+  Использован Chrome for Testing 151.0.7922.34. Это исходная инженерная контрольная точка;
+  результат текущего захода записан выше.
 - Для продолжения 4.2 добавлен отдельный `compatibility` workflow: Chrome Stable,
   Firefox и WebKit, общие 24 E2E, фактические версии в логе. Он запускается вручную или
   при push изменений своей конфигурации/тестов; подробности — [testing](docs/testing.md).
