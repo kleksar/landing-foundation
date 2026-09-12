@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>МЕРА — визуальная проба оптического контроля</title>
+  <style>
+    :root {
+      --paper: #eeece4;
+      --ink: #202923;
+      --muted: #535e55;
+      --line: #bac0b5;
+      --signal: #bc3d21;
+      --focus: #1b4f68;
+      --gutter: clamp(22px, 4.45vw, 72px);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--focus); outline-offset: 6px; }
+    .page { max-width: 1600px; margin-inline: auto; padding: 0 var(--gutter); }
+    .skip { position: absolute; top: 12px; left: var(--gutter); padding: 12px 16px; background: var(--ink); color: var(--paper); transform: translateY(-160%); z-index: 2; }
+    .skip:focus { transform: translateY(0); }
+    .masthead { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 29px 0 25px; border-bottom: 1px solid var(--line); }
+    .wordmark { display: inline-flex; align-items: baseline; gap: 9px; font-size: 31px; font-weight: 800; letter-spacing: -.055em; }
+    .wordmark::after { content: ""; width: 8px; height: 8px; background: var(--signal); }
+    .descriptor { margin: 0; max-width: 320px; font-size: 15px; line-height: 1.35; text-align: right; }
+    .hero { padding-top: 43px; }
+    h1 { max-width: 1310px; margin: 0; font-size: clamp(48px, 7.12vw, 108px); line-height: .99; font-weight: 700; letter-spacing: -.052em; text-wrap: balance; }
+    h1 span { display: block; }
+    .hero-body { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(30px, 5vw, 80px); margin: 28px 0 28px; }
+    .intro { align-self: center; padding: 8px 0 30px; }
+    .description { max-width: 470px; margin: 0 0 32px; font-size: clamp(19px, 1.63vw, 25px); line-height: 1.45; letter-spacing: -.015em; }
+    .primary { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 54px; padding: 14px 19px; background: var(--ink); color: var(--paper); border: 1px solid var(--ink); text-decoration: none; font-size: 16px; line-height: 1.35; }
+    .primary:hover { background: #364238; }
+    .primary:active { background: #101a13; }
+    .arrow { flex: 0 0 auto; width: 19px; height: 19px; }
+    .drawing { margin: 0; min-width: 0; }
+    .drawing svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .drawing figcaption { margin: 2px 0 0; color: var(--muted); font-size: 12px; line-height: 1.4; letter-spacing: .055em; text-align: right; }
+    .parameters { border-top: 1px solid var(--line); padding: 24px 0 34px; scroll-margin-top: 24px; }
+    .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 25px; }
+    h2 { font-size: 14px; line-height: 1.4; letter-spacing: .08em; text-transform: uppercase; font-weight: 400; margin: 0; }
+    .demo-note { color: var(--muted); margin: 0; font-size: 13px; line-height: 1.5; }
+    .specs { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 40px; margin: 0; }
+    .specs > div { min-width: 0; }
+    dt { color: var(--muted); font-size: 14px; line-height: 1.4; margin-bottom: 10px; }
+    dd { font-size: clamp(23px, 2.14vw, 33px); line-height: 1.2; letter-spacing: -.025em; margin: 0; }
+    .contact-row { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 19px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .contact { display: inline-flex; align-items: center; gap: 13px; min-height: 44px; font-size: 19px; line-height: 1.3; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+    .contact:hover { color: var(--signal); }
+    .contact:active { color: var(--ink); }
+    .contact .arrow { color: var(--signal); }
+    .project-note { color: var(--muted); margin: 0; text-align: right; font-size: 13px; line-height: 1.5; }
+    @media (max-width: 760px) {
+      .masthead { padding: 24px 0 20px; align-items: flex-start; gap: 24px; }
+      .wordmark { font-size: 26px; }
+      .descriptor { max-width: 203px; font-size: 12px; }
+      .hero { padding-top: 34px; }
+      h1 { font-size: clamp(43px, 8.9vw, 67px); line-height: 1.04; letter-spacing: -.045em; }
+      h1 span { display: inline; }
+      .hero-body { grid-template-columns: 1fr; gap: 22px; margin: 24px 0 29px; }
+      .intro { padding: 0; }
+      .description { max-width: 560px; font-size: 19px; line-height: 1.45; margin-bottom: 25px; }
+      .primary { min-height: 54px; }
+      .drawing { max-width: 590px; width: 100%; justify-self: center; }
+      .drawing figcaption { font-size: 11px; }
+      .parameters { padding-top: 23px; padding-bottom: 22px; }
+      .section-heading { display: block; margin-bottom: 21px; }
+      .demo-note { margin-top: 7px; max-width: 280px; font-size: 12px; }
+      .specs { grid-template-columns: 1fr; gap: 0; }
+      .specs > div { padding: 17px 0; border-top: 1px solid var(--line); }
+      dt { margin-bottom: 7px; font-size: 13px; }
+      dd { font-size: 26px; }
+      .contact-row { display: block; margin-top: 8px; padding-top: 17px; }
+      .project-note { text-align: left; margin-top: 20px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+  <div class="page">
+    <header class="masthead">
+      <div class="wordmark">МЕРА</div>
+      <p class="descriptor">Демонстрационная система<br>оптического контроля</p>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span>Контроль геометрии</span> <span>прямо на линии</span></h1>
+        <div class="hero-body">
+          <div class="intro">
+            <p class="description">Сравнивайте размеры детали с допусками и находите отклонения до следующего этапа производства</p>
+            <a class="primary" href="#parameters">Посмотреть параметры
+              <svg class="arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v14m-6-6 6 6 6-6" stroke="currentColor" stroke-width="1.6"/></svg>
+            </a>
+          </div>
+          <figure class="drawing">
+            <svg viewBox="0 0 650 330" fill="none" aria-hidden="true">
+              <g stroke="#bac0b5" stroke-width="1">
+                <path d="M104 28v282M596 28v282M82 53h536M82 289h536"/>
+                <path d="M98 47h12v12H98zM590 47h12v12h-12zM98 283h12v12H98zM590 283h12v12h-12z" fill="#eeece4"/>
+              </g>
+              <g stroke="#202923" stroke-width="2.5" stroke-linejoin="miter">
+                <path d="m176 137 181-90 190 102-181 91-190-103Z"/>
+                <path d="M176 137v59l190 102 181-91v-58M366 240v58"/>
+                <path d="m291 142 67-34 76 41-68 34-75-41Z"/>
+              </g>
+              <path d="m127 218 458-94" stroke="#bc3d21" stroke-width="2.5"/>
+              <circle cx="176" cy="208" r="5.5" fill="#bc3d21"/>
+              <circle cx="547" cy="132" r="5.5" fill="#bc3d21"/>
+              <path d="M176 218v21m371-97v21" stroke="#bc3d21" stroke-width="1"/>
+            </svg>
+            <figcaption>Условная схема детали</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section id="parameters" class="parameters" aria-labelledby="parameters-title">
+        <div class="section-heading">
+          <h2 id="parameters-title">Параметры системы</h2>
+          <p class="demo-note">Значения приведены для демонстрации</p>
+        </div>
+        <dl class="specs">
+          <div><dt>Поле измерения</dt><dd>240 × 160 мм</dd></div>
+          <div><dt>Интерфейсы</dt><dd>Ethernet, дискретный I/O</dd></div>
+          <div><dt>Формат отчётов</dt><dd>CSV и JSON</dd></div>
+        </dl>
+        <div class="contact-row">
+          <a class="contact" href="mailto:demo@example.com">Обсудить задачу
+            <svg class="arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+          <p class="project-note">МЕРА — учебная визуальная проба</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

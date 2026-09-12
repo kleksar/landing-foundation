@@ -6,23 +6,27 @@ prerendered landing pages and small websites. The target is one site per reposit
 ## Select the task
 
 Read `PROJECT.md` when present and classify the current user request. For a new client site, a
-substantial brief revision or a resumed client project, read `.agents/skills/landing-intake/SKILL.md`.
+substantial brief revision or a resumed client project, read
+[landing-intake](.agents/skills/landing-intake/SKILL.md).
 An explicit new-client request takes precedence over copied foundation context: use an independent
 client copy and replace its `PROJECT.md`; preserve the source template. Do not infer a client from
 demo copy or a chat title. Routine edits with sufficient client context go directly to the relevant
 specification and TDD workflow.
 
 For page structure, substantive copywriting or content revision, read
-`.agents/skills/landing-content/SKILL.md`. With sufficient saved context, use it directly; do not
-repeat intake. A narrow wording edit does not require replanning the page.
+[landing-content](.agents/skills/landing-content/SKILL.md). With sufficient saved context, use it
+directly; do not repeat intake. A narrow wording edit does not require replanning the page.
 
-For visual direction or substantial design planning, read `.agents/skills/landing-design/SKILL.md`.
-Preserve accepted decisions; a local visual fix does not require a new concept. Use `visual-qa`
-for reviewing rendered output, not as a prerequisite for writing a design specification.
+For a new site implementation, visual direction or substantial redesign, read
+[landing-design](.agents/skills/landing-design/SKILL.md), including when `DESIGN.md` is complete.
+Preserve accepted decisions; implementing them does not require a new concept. Before first
+acceptance of a new site or substantial visual change, read
+[visual-qa](.agents/skills/visual-qa/SKILL.md) and inspect the rendered result. Local visual fixes
+need only the affected layout/interaction checks; document-only work does not need rendering.
 
 For choosing or replacing libraries and implementation resources, read
-`.agents/skills/landing-tooling/SKILL.md`. Apply it to actual requirements; routine work using
-established choices does not need another tools survey.
+[landing-tooling](.agents/skills/landing-tooling/SKILL.md). Apply it to actual requirements; routine
+work using established choices does not need another tools survey.
 
 For client work, the current request, `PROJECT.md`, `SITE_SPEC.md` and `DESIGN.md` guide the increment.
 The foundation roadmap is historical background for that client; do not continue template development
@@ -58,6 +62,8 @@ Read the nearest nested `AGENTS.md` before editing. Update affected instructions
 increment that changes their paths or behavior. Do not duplicate rules across instruction files.
 
 ## TDD workflow
+
+Use [tdd-change](.agents/skills/tdd-change/SKILL.md) for behavior changes.
 
 For every behavior change:
 
@@ -101,4 +107,10 @@ explicitly recorded, and the next step is clear. For behavior changes, the inten
 observed and the affected checks pass. Before a site is released, all routes prerender; HTML is usable
 without JavaScript; browser, accessibility, responsive, and bundle checks pass. Dependency and lockfile
 changes are explained. A blocked verification is a limitation, not evidence of release readiness.
-Update `PROJECT.md` with the actual outcome and next action before handing work to another session.
+For new sites and substantial visual changes, first acceptance also needs rendered design review
+against the brief and `DESIGN.md`; technical checks alone do not establish visual quality.
+Update `PROJECT.md` during work and before handoff with compact evidence for the current increment:
+loaded skill/reference paths, concrete applied decisions, inspected render paths and viewport sizes,
+check results, blockers and next action. Distinguish source reads, screenshots captured and images
+actually inspected. Do not claim client auto-loading from explicit file reads or mark an unrendered
+design visually accepted. Link to detailed artifacts instead of duplicating their contents.

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820">
+  <title>Original visual reference: technical specimen on a warm paper surface</title>
+  <rect width="1280" height="820" fill="#eeeae1"/>
+  <g fill="#202622" font-family="sans-serif"><text x="64" y="74" font-size="24" font-weight="700">FIELD / FORM</text><text x="64" y="222" font-size="84" font-weight="600">Objects, measured.</text><text x="66" y="273" font-size="20">A study in precision and proportion.</text></g>
+  <g stroke="#a2a69e" stroke-width="1"><path d="M64 108H1216M64 648H1216M760 328V612M1180 328V612M738 350H1202M738 590H1202"/></g>
+  <g fill="none" stroke="#202622" stroke-width="3"><path d="M847 423l154-80 127 70-154 81zM847 423v107l127 70V494M1128 413v107l-154 80"/><path d="M927 435l74-38 49 27-74 38z"/></g>
+  <path d="M789 531L1158 399" stroke="#cb512d" stroke-width="3"/>
+  <g fill="#cb512d"><circle cx="847" cy="510" r="6"/><circle cx="1128" cy="410" r="6"/></g>
+  <g fill="#202622" font-family="sans-serif"><text x="66" y="395" font-size="15" letter-spacing="2">SPECIMEN 04</text><text x="64" y="450" font-size="32">Precision has a shape.</text><text x="66" y="491" font-size="19">Line, plane, and a single point of focus.</text><text x="64" y="704" font-size="14">DIMENSION</text><text x="64" y="755" font-size="33">240 × 160</text><text x="488" y="704" font-size="14">MATERIAL</text><text x="488" y="755" font-size="33">Anodized alloy</text><text x="935" y="704" font-size="14">SERIES</text><text x="935" y="755" font-size="33">04 / 12</text></g>
+</svg>

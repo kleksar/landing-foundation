@@ -26,6 +26,10 @@ Read [conditional candidates](references/conditional-candidates.md) for the rele
 needed. This small list is a starting point, not a required stack or a list of installed packages.
 A candidate outside it is allowed with the same checks. Do not research every category for every site.
 
+For a product video, a distinctive animated explanation, or a supplied video-shotcraft example, read
+[optional visual recipes](references/video-shotcraft.md). Select a concrete source and verify the
+adapted result; a Remotion demo is not automatically a responsive, interactive web component.
+
 ## Check the chosen release, not its reputation
 
 For a proposed new package, consult its official documentation, release history and published package

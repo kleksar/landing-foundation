@@ -1,13 +1,15 @@
 ---
 name: landing-design
-description: Define or substantially revise a landing page's visual direction and implementable UI rules in DESIGN.md from its brief and content. Use for design planning; keep small visual fixes scoped and use visual-qa for reviewing rendered output.
+description: Define or implement a new landing page's visual direction, including from an existing DESIGN.md, or substantially redesign a site. Keep local visual fixes scoped; use visual-qa for rendered acceptance.
 ---
 
 # Landing design
 
 Read `AGENTS.md`, the current request, `PROJECT.md`, `SITE_SPEC.md` and existing `DESIGN.md`.
-Inspect supplied visual references or assets when relevant and accessible. Use intake only for a
-new or materially changed brief; use content work only if required content is missing. An existing
+Inspect supplied or selected visual references and assets relevant to the design decision. If a
+reference cannot be opened, record that limitation and use an available source or an explicitly
+original treatment; do not claim to have viewed it. Use intake only for a new or materially changed
+brief; use content work only if required content is missing. An existing
 client context does not need another questionnaire. Work on the requested design increment.
 
 `DESIGN.md` owns visual decisions; keep copy and action behavior in `SITE_SPEC.md`. Adapt layout
@@ -31,10 +33,12 @@ No universal palette, typeface, rounded-card layout, section rhythm or animation
 Familiar patterns can be useful; choose them for this page. Meaningful variation comes from hierarchy,
 composition, information density, imagery and interaction emphasis, not a color swap or novelty alone.
 
-For a new direction, a deliberately different variant, or a substantive redesign, use the
+For a new site implementation, a new direction, a deliberately different variant, or a substantive
+redesign, use the
 [UX/UI reference adapter](references/ux-ui-agent-skills.md#design-planning). It connects selected
 upstream guidance to this workflow without installing another instruction stack. Skip it for a
-local visual fix or implementation of an already complete design specification.
+local visual fix. With a complete `DESIGN.md`, apply its decisions and the implementation/review
+steps below without reopening agreed choices or writing another specification.
 
 ## Make DESIGN.md usable for implementation
 
@@ -81,9 +85,15 @@ A design-only task ends with the specification and a brief `PROJECT.md` update p
 limitations and the next useful action. Do not claim that layout, fonts, animations or responsive
 behavior have been rendered or tested if they have only been described.
 
-When a visual proposal or implementation is part of the authorized task, show a small representative
-slice using the actual content: enough hierarchy, a real action and any task-defining component to
-judge the direction. Inspect its wide and narrow renderings before calling it reviewed. A separate
-PDF, Figma file or complete client site is not a prerequisite. Use the root TDD workflow for behavior
-changes and `visual-qa` for rendered verification. Preparing this design skill does not itself
-implement or publish a client site, and does not require a browser for a document-only increment.
+When implementation or a rendered proposal is authorized, build a representative HTML/CSS slice
+before extending a new visual direction across the page. Use the actual content, a real action and
+the defining component so it tests hierarchy and content fit, not just colors. Inspect the actual
+wide and narrow images, correct observed mismatches, then extend the design. This is an implementation
+checkpoint, not another user approval. If rendering is blocked, record the limit; the direction
+remains visually unverified. A PDF, Figma file or separate prototype project is not required.
+
+Use the root TDD workflow for behavior changes and
+[visual-qa](../visual-qa/SKILL.md) for first rendered acceptance of the completed site or redesign,
+including when implementation started from an existing `DESIGN.md`. Record evidence in `PROJECT.md`
+as required by `AGENTS.md`. Preparing instructions or a design-only specification does not itself
+authorize implementation or publication, and does not require a browser.

@@ -1,0 +1,20 @@
+{
+  "variant": "b",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "browser": "153.0.8010.0",
+  "dimensions": {
+    "viewport": 1440,
+    "document": 1440
+  },
+  "focus": {
+    "focused": true,
+    "outline": "solid",
+    "width": "3px"
+  },
+  "primaryAction": "keyboard Enter navigated to visible #parameters",
+  "accessibilityViolations": [],
+  "errors": []
+}

@@ -2,8 +2,9 @@
 
 Use only the section relevant to the current task. This is a project-authored adaptation of selected
 ideas, not an installation of the upstream kit or its slash commands. The guidance below works
-offline; upstream reads are optional for more detail. If unavailable, continue locally without
-claiming to have inspected an external example.
+offline; rereading the pinned upstream guidance is optional. This does not waive inspection of a
+visual reference supplied or selected for the current design. If unavailable, record that limit;
+do not claim to have inspected an external example.
 
 ## Design planning
 
@@ -17,22 +18,29 @@ Extend the existing `DESIGN.md`, not a second brief or token document:
 - For an explicitly different variant, compare with the previous design if available. Identify
   concrete changes in composition, typography, density and imagery as relevant, not just palette.
   Without the previous design, label the direction a proposal, not a verified difference.
-- Select external aesthetic references only for this brief; record what was actually inspected.
-  Map useful decisions to this site's existing CSS roles. A catalog name is not a viewed design
-  or permission to reuse its logo, imagery or fonts.
+- For a supplied or selected reference relevant to the brief, open the actual page, image or design
+  region. Record its URL/path and one concrete applied decision: e.g. its comparison layout informs
+  our service table's alignment and narrow-screen reading order. Separate a code/source read from
+  viewing the rendered design. A catalog name is neither an inspected example nor permission to
+  reuse its logo, imagery or fonts. No external catalog or minimum reference count is required.
 - For an existing site, identify the observed problem before choosing a new treatment. Preserve
   approved identity, routes, copy, actions and interaction semantics. Polishing one component does
   not authorize a page-wide redesign.
 
-Keep decisions in the existing composition/type/color sections. No separate score, catalog search,
-mood document or full design-system migration is a prerequisite.
+Keep decisions in the existing composition/type/color sections. For implementation, follow
+[landing-design's slice checkpoint](../SKILL.md#review-and-hand-off): inspected source or an explicitly
+original choice → specific design decision → representative HTML/CSS → wide/narrow inspection →
+full implementation. Keep the compact decision/evidence trail in `PROJECT.md`, not a second brief.
+No separate score, mood document or full design-system migration is a prerequisite.
 
 ## Rendered review
 
 Judge the served production build against the brief and `DESIGN.md`:
 
-- Inspect hierarchy, section rhythm and consistency of type, surfaces and controls in actual
-  desktop/mobile screenshots. Distinguish documented choices from accidental inconsistencies;
+- Open the actual desktop/mobile images of the first screen and full page; screenshot filenames,
+  DOM assertions and capture success alone are not visual review. Inspect hierarchy, section rhythm
+  and consistency of type, surfaces and controls. Compare to the brief, `DESIGN.md` and the relevant
+  inspected references. Distinguish documented choices from accidental inconsistencies;
   familiar patterns and restrained designs are not defects by themselves.
 - Exercise the primary action and relevant states. An accessible name or selected appearance
   does not prove a control works. Use local tests or safe test destinations; do not submit real
